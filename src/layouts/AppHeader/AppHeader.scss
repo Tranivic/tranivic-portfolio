@@ -1,0 +1,27 @@
+@import '../../assets/scss/setup/variables.scss';
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem 0;
+  
+  .logo {
+    span {
+      font-family: $font-family-primary;
+    }
+  }
+  .navbar {
+    ul {
+      display: flex;
+      li{
+        margin-left: 2rem;
+        a {
+          font-size: 1.6rem;
+          color: $black-main;
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+}

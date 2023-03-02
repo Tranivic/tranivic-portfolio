@@ -1,7 +1,17 @@
 <template>
-  <router-view/>
+<app-header></app-header>
+<router-view />
 </template>
 
-<style lang="scss">
+<script>
+import AppHeader from "@/layouts/AppHeader/AppHeader.vue";
+export default {
+    components: {
+        AppHeader,
+    },
+};
+</script>
 
+<style lang="scss">
+@import "assets/scss/global.scss";
 </style>
