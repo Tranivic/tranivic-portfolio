@@ -1,0 +1,10 @@
+.status-bar{
+    display: flex;
+    padding: $padding-base;
+    .status-message{
+        display: flex;
+        .status-icon{
+            margin-right: 1rem;
+        }
+    }
+}

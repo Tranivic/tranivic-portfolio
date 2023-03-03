@@ -3,25 +3,19 @@
     <div class="logo">
         <span>victortrani.</span>
     </div>
-    <div class="navbar">
-        <ul class="menu">
-            <li class="menu-item">
-                <router-link to="/">Work</router-link>
-            </li>
-            <li class="menu-item">
-                <router-link to="/about">About</router-link>
-            </li>
-            <li class="menu-item">
-                <router-link to="/contact">Contact</router-link>
-            </li>
-        </ul>
-    </div>
+    <status-bar></status-bar>
+    <nav-menu></nav-menu>
 </header>
 </template>
 
 <script>
+import StatusBar from "@/components/ui/StatusBar/StatusBar.vue";
+import NavMenu from "@/components/ui/NavMenu/NavMenu.vue";
 export default {
-
+    components: {
+        StatusBar,
+        NavMenu,
+    },
 }
 </script>
 
