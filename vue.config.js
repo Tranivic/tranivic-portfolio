@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   pluginOptions: {
     "style-resources-loader": {
@@ -6,7 +8,7 @@ module.exports = {
     }
   },
 
-  //Responsable config for auto import variables into vue components
+  //Responsable config for auto importa variables into vue components
   css: {
     loaderOptions: {
       scss: {
