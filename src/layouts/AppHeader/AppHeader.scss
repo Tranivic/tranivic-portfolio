@@ -3,11 +3,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 4rem 0;
+  padding: $padding-base 0;
+  font-family: $font-family-primary;
   
   .logo {
     span {
-      font-family: $font-family-primary;
+      font-size: $font-size-base;
+      font-weight: $font-weight-title;
+      color: $black-main;
     }
   }
   .navbar {
