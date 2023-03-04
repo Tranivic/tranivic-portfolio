@@ -3,8 +3,21 @@
     padding: $padding-base;
     .status-message{
         display: flex;
+        align-items: center;
+        font-family: $font-family-primary;
+        font-weight: $font-weight-base;
+        background-color: $black-secondary;
+        padding: .8rem 8rem;
+        border-radius: 10rem;
+        font-size: $font-size-small;
+        color: $black-main;
+
         .status-icon{
             margin-right: 1rem;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            background-color: $green-main;
         }
     }
 }

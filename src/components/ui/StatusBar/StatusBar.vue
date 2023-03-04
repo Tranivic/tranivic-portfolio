@@ -1,8 +1,8 @@
 <template>
 <div class="status-bar">
     <div class="status-message">
-        <div class="status-icon">O</div>
-        <span>AVAILABLE FOR WORK</span>
+        <div class="status-icon"></div>
+        <span>AVAILABLE FOR FREELANCE WORK</span>
     </div>
 </div>
 </template>
