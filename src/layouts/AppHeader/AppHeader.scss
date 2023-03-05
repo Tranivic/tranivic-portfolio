@@ -5,26 +5,11 @@ header {
   align-items: center;
   padding: $padding-base 0;
   font-family: $font-family-primary;
-  
   .logo {
     span {
       font-size: $font-size-base;
       font-weight: $font-weight-title;
       color: $black-main;
     }
-  }
-  .navbar {
-    ul {
-      display: flex;
-      li{
-        margin-left: 2rem;
-        a {
-          font-size: 1.6rem;
-          color: $black-main;
-          text-decoration: none;
-        }
-      }
-    }
-
   }
 }
