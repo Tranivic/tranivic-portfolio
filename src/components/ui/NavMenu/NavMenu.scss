@@ -1,3 +1,46 @@
-.nav-menu{
-    
+.nav-menu {
+  position: relative;
+  .nav-menu-btn {
+    background-color: $black-secondary;
+    border-radius: $border-radius-base;
+    font-size: $font-size-base;
+    font-family: $font-family-primary;
+    font-weight: $font-weight-base;
+    padding: 1rem;
+    cursor: pointer;
+    width: 6rem;
+    .menu-open,
+    .menu-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      i {
+        padding-left: 1rem;
+      }
+    }
+  }
+  .nav-menu-content {
+    position: absolute;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    top: 4rem;
+    right: 0.1rem;
+    border-radius: $border-radius-base;
+    background-color: $black-secondary;
+    .nav-menu-content-item {
+      padding: 1rem;
+      margin-right: 6rem;
+      a {
+        padding: 1rem 0;
+        text-decoration: none;
+        list-style: none;
+        color: $black-main;
+        padding-right: $padding-base;
+      }
+    }
+    .nav-menu-content-item:before {
+     @include gradient-shadow;
+    }
+  }
 }
