@@ -1,0 +1,37 @@
+.app-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50rem;
+    .footer-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: $font-family-primary;
+        h1{
+            font-size: 5.5rem;
+            font-weight: $font-weight-title;
+            color: $black-main;
+            margin-bottom: 1rem;
+        }
+        h2{
+            font-size: 2.3rem;
+            font-weight: $font-weight-small;
+            color: $gray-main;
+            margin-bottom: 1rem;
+        }
+    }
+    .footer-btns{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin-top: $margin-base;
+        button{
+            margin: 0 1rem;
+            padding: 1rem 2rem;
+        }
+    }
+}

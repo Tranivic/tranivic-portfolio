@@ -1,4 +1,4 @@
-@mixin gradient-shadow{
+@mixin gradient-shadow($customOpacity) {
     content: '';
     position: absolute;
     top: -1px;
@@ -8,5 +8,5 @@
     z-index: -1;
     background: linear-gradient(310deg, rgba(247,0,204,1) 6%, rgba(74,222,128,1) 99%);
     filter: blur(1rem);
-    opacity: 0.2;
+    opacity: $customOpacity;
 }
