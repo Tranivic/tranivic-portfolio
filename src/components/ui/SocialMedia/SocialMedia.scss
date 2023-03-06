@@ -1,0 +1,60 @@
+.social-media-menu {
+  display: flex;
+  padding: 0.2rem 2rem;
+  background-color: $black-secondary;
+  border-radius: $border-radius-base;
+  margin: $margin-base;
+  li {
+    a {
+        padding: 0.3rem 0.5rem;
+        margin: 0 0.5rem;
+      i {
+        padding: 0.3rem 0.5rem;
+        font-size: 2.5rem;
+        color: $gray-main;
+        border-radius: 40%;
+        cursor: pointer;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
+
+.fa-github:hover,
+.fa-envelope:hover {
+  color: $black-main;
+  background-color: $white-main;
+}
+
+.fa-linkedin:hover {
+  color: #0072b1;
+  background-color: $white-main;
+}
+
+.fa-youtube:hover {
+  color: #ff0000;
+  background-color: $white-main;
+}
+
+.fa-instagram:hover {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  -webkit-background-clip: text;
+  /* Also define standard property for compatibility */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fa-whatsapp:hover {
+  color: $white-main;
+  background-color: #25d366;
+}

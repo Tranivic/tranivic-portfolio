@@ -24,11 +24,11 @@ button {
 // White version
 .white-btn {
   position: relative;
-  background-color: $white-main;
+  background-color: $black-secondary;
   color: $black-main;
 
   &:hover {
     transform: scale(1.1);
-    background-color: darken($white-main, 15%);
+    background-color: darken($black-secondary, 10%);
   }
 }
