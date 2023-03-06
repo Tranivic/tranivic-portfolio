@@ -1,4 +1,5 @@
 .app-footer{
+    font-family: $font-family-primary;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -9,18 +10,16 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        font-family: $font-family-primary;
         h1{
             font-size: 5.5rem;
             font-weight: $font-weight-title;
             color: $black-main;
-            margin-bottom: 1rem;
+            margin-bottom: $margin-base;
         }
         h2{
             font-size: 2.3rem;
             font-weight: $font-weight-small;
             color: $gray-main;
-            margin-bottom: 1rem;
         }
     }
     .footer-btns{
@@ -28,10 +27,58 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
-        margin-top: $margin-base;
+        margin: $margin-base 0 6rem 0;
         button{
             margin: 0 1rem;
             padding: 1rem 2rem;
         }
     }
+    .nav-menu-flat{
+        display: flex;
+        padding: .5rem;
+        li{
+            a{
+                text-decoration: none;
+                list-style: none;
+                color: $gray-main;
+                font-size: $font-size-base;
+                font-weight: $font-weight-base;
+                margin: .5rem;
+                padding: 1rem;
+                transition: all 0.3s ease-in-out;
+                &:hover{
+                    color: darken($gray-main, 100%);
+                }
+            }
+        }
+    }
+    .emoji-container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 4rem 0;
+        height: 5rem;
+        width: 100%;
+        span{
+            transition: all 0.3s ease-in-out;
+            font-size: 5rem;
+            cursor: pointer;
+            &:active{
+                font-size: 4rem;
+            }
+            &:hover{
+                animation: shake 1s infinite;
+            }
+        }
+    }
 }
+
+// Define the keyframes for the shake animation
+@keyframes shake {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(-20deg); }
+    75% { transform: rotate(20deg); }
+    100% { transform: rotate(0); }
+  }
+  
