@@ -40,7 +40,7 @@
       }
     }
     .nav-menu-content-item:before {
-     @include gradient-shadow(.2)
+     @include gradient-shadow(.1)
     }
   }
 }
