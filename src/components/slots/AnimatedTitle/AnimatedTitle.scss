@@ -1,0 +1,26 @@
+.animated-title-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    width: 100%;
+
+    .animated-item {
+      display: inline-block;
+        margin-right: 2rem;
+        font-weight: 600;
+        transition: all .4s ease;
+        font-size: 5rem;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transform: translate(10px, 10px);
+}
+
+.show {
+    opacity: 1;
+    transform: scale(1);
+    transform: translate(-10px, -10px);
+}
