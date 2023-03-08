@@ -2,6 +2,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    text-align: center;
     padding: 6rem 0;
     font-family: $font-family-primary;
+    .sub-title{
+        font-size: 2.5rem;
+        color: lighten($gray-main, 15%);
+        padding: $padding-base;
+    }
+    .hire-btn{
+        margin: $margin-base;
+        font-size: $font-size-title;
+        font-weight: $font-weight-title;
+        padding: 2.5rem 3.5rem;
+    }
 }
