@@ -1,19 +1,30 @@
-$black-main: #000;
-$black-secondary: #F9FAFB; // #F9FAFB
+// Colors
+$black-main: #292929;
+$black-secondary: #F3F4F6; // #F9FAFB
 $white-main: #ffffff;
-$gray-main: #7A7A7B;
+$gray-main: #868686;
 $green-main: #4ADE80;
+$linear-gradient-primary: linear-gradient(310deg, rgba(247,0,204,1) 6%, rgba(74,222,128,1) 99%);
 
+// Font family
 $font-family-primary: 'Roboto', sans-serif;
 
+// Font size
 $font-size-title: 2rem;
 $font-size-base: 1.6rem;
 $font-size-small: 1.4rem;
 
+// Font weight
+$font-weight-strong: 700;
 $font-weight-title: 500;
 $font-weight-base: 400;
 $font-weight-small: 300;
 
-$padding-base: 2rem;
+// Paddings
+$padding-base: 2.2rem;
+
+// Margin
 $margin-base: 2rem;
+
+// Border radius
 $border-radius-base: 1rem;

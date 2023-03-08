@@ -6,7 +6,7 @@
     right: -1px;
     bottom: -1px;
     z-index: -1;
-    background: linear-gradient(310deg, rgba(247,0,204,1) 6%, rgba(74,222,128,1) 99%);
+    background: $linear-gradient-primary;
     filter: blur(1rem);
     opacity: $customOpacity;
 }
