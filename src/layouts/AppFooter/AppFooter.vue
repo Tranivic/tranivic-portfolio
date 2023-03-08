@@ -10,6 +10,9 @@
     </div>
     <ul class="nav-menu-flat">
         <li @click="toggleMenu" class="nav-menu-content-item">
+            <router-link to="/">Home</router-link>
+        </li>
+        <li @click="toggleMenu" class="nav-menu-content-item">
             <router-link to="/about">About</router-link>
         </li>
         <li @click="toggleMenu" class="nav-menu-content-item">
