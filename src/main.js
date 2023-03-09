@@ -4,14 +4,17 @@ import router from './router'
 import store from './store'
 
 // Global Components import
-import MainButton from './components/slots/MainButton/MainButton.vue'
-import SocialMedia from './components/ui/SocialMedia/SocialMedia.vue'
-import AnimatedTitle from './components/slots/AnimatedTitle/AnimatedTitle.vue'
+import MainButtonComponent from './components/slots/MainButton/MainButton.vue'
+import SocialMediaComponent from './components/ui/SocialMedia/SocialMedia.vue'
+import AnimatedTitleComponent from './components/slots/AnimatedTitle/AnimatedTitle.vue'
+import LetsTalkComponent from './components/ui/LetsTalk/LetsTalk.vue'
+
 const app = createApp(App)
 app.use(store)
 app.use(router)
-app.component('main-button', MainButton)
-app.component('social-media', SocialMedia)
-app.component('animated-title', AnimatedTitle)
+app.component('main-button', MainButtonComponent)
+app.component('social-media', SocialMediaComponent)
+app.component('animated-title', AnimatedTitleComponent)
+app.component('lets-talk', LetsTalkComponent)
 
 app.mount('#app')
