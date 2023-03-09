@@ -1,13 +1,18 @@
 // Colors
 $black-main: #292929;
-$black-secondary: #F9FAFB; // #F9FAFB
+$black-secondary: #f9fafb; // #F9FAFB
 $white-main: #ffffff;
 $gray-main: #a1a1a1;
-$green-main: #4ADE80;
-$linear-gradient-primary: linear-gradient(310deg, rgba(247,0,204,1) 6%, rgb(32, 61, 226) 99%);
+$green-main: #4ade80;
+$linear-gradient-primary: linear-gradient(
+  310deg,
+  rgba(247, 0, 204, 1) 6%,
+  rgb(32, 61, 226) 99%
+);
 
 // Font family
 $font-family-primary: 'Roboto', sans-serif;
+$font-family-secondary: 'Open Sans', sans-serif;
 
 // Font size
 $font-size-title: 2rem;

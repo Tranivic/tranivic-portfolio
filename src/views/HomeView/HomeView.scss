@@ -4,13 +4,15 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  font-family: $font-family-primary;
   padding: $padding-base * 2 0;
+  font-family: $font-family-primary;
   h1 {
+    font-family: $font-family-primary;
     font-size: $font-size-title * 1.4;
     font-weight: 600;
   }
   p {
+    font-family: $font-family-secondary;
     font-size: $font-size-base * 1.4;
     color: $gray-main;
   }
@@ -19,7 +21,7 @@
     font-size: 2.5rem;
     font-weight: 300;
     padding: $padding-base 0;
-    color: lighten($gray-main, 15%);
+    color: lighten($gray-main, 10%);
   }
   .hire-btn {
     margin: $margin-base;
@@ -52,7 +54,7 @@
     .skills {
       background-color: $black-secondary;
       border-radius: $border-radius-base;
-      padding: $padding-base;
+      padding: $padding-base *2;
       p {
         font-size: $font-size-base;
         line-height: 2.3rem;

@@ -1,3 +1,30 @@
 .about-page{
-    background-color: red;
+    padding: $padding-base *3;
+    .info-container{
+        display: flex;
+        justify-content: center;
+        p{
+            font-family: $font-family-secondary;
+            color: $gray-main;
+            font-size: $font-size-base *1.4;
+            line-height: 4rem;
+            text-align: center;
+            padding:$padding-base;
+            width: 60%;
+        }
+    }
+    .btn-container{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-top: $padding-base * 1.5;
+        button{
+            font-family: $font-family-primary;
+            padding: $padding-base;
+            margin-right: $margin-base * 2;
+            font-size: $font-size-base;
+            font-weight: $font-weight-base;
+        }
+    }
+  
 }

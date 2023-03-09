@@ -1,7 +1,7 @@
 <template>
 <header>
     <div class="logo">
-        <span>victortrani.</span>
+        <routerLink to="/">victortrani.</routerLink>
     </div>
     <status-bar></status-bar>
     <nav-menu></nav-menu>

@@ -8,9 +8,10 @@
   .animated-item {
     display: inline-block;
     margin-right: 1.5rem;
-    font-weight: $font-weight-title;
     transition: all 0.3s ease;
     font-size: 6rem;
+    font-family: $font-family-primary;
+    font-weight: 600;
   }
 }
 

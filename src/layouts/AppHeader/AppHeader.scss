@@ -3,13 +3,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $padding-base 0;
+  padding: $padding-base *2 0;
   font-family: $font-family-primary;
   .logo {
-    span {
-      font-size: 1.7rem;
-      font-weight: $font-weight-title;
+    a {
+      font-family: $font-family-secondary;
+      font-size: 1.8rem;
+      font-weight: 600;
       color: $black-main;
+      cursor: pointer;
+      text-decoration: none;
     }
   }
 }
