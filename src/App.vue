@@ -8,6 +8,9 @@
 import AppHeader from "@/layouts/AppHeader/AppHeader.vue";
 import AppFooter from "@/layouts/AppFooter/AppFooter.vue";
 export default {
+    created () {
+        this.$store.dispatch('integrateCalApi')
+    },
     components: {
         AppHeader,
         AppFooter,
