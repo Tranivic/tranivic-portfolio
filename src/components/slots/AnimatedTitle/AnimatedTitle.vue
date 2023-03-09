@@ -19,8 +19,7 @@ export default {
         },
         secondLine: {
             type: String,
-            required: true,
-            default: 'This is the second Line',
+            required: false,
         },
     },
     data() {
@@ -35,8 +34,12 @@ export default {
     },
     methods: {
         populateArrays() {
-            this.firstSequence = this.firstLine.split(' ');
-            this.secondSequece = this.secondLine.split(' ');
+            if(this.firstLine){
+                this.firstSequence = this.firstLine.split(' ');
+            }
+            if(this.secondLine){
+                this.secondSequece = this.secondLine.split(' ');
+            }
         },
         animateWords() {
             const items = document.querySelectorAll('.animated-item');

@@ -1,5 +1,6 @@
 button {
   font-size: $font-size-base;
+  font-weight: $font-weight-title;
   border-radius: $border-radius-base;
   cursor: pointer;
   border: none;
@@ -12,12 +13,11 @@ button {
     background-color: $black-main;
     color: $white-main;
     &:before {
-      @include gradient-shadow(.2);
+      @include gradient-shadow(.4);
     }
     &:hover {
       transform: scale(1.1);
-      background-color: lighten($black-main, 90%);
-      z-index: 1;
+      background-color: lighten($black-main, 80%);
     }
   }  
 
