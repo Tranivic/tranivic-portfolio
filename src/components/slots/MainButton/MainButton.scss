@@ -1,4 +1,4 @@
-button {
+.main-button {
   font-size: $font-size-base;
   font-weight: $font-weight-title;
   border-radius: $border-radius-base;
@@ -9,21 +9,20 @@ button {
 
 // Black version
 .black-btn {
-    position: relative;
-    background-color: $black-main;
-    color: $white-main;
-    &:before {
-      @include gradient-shadow(.4);
-    }
-    &:hover {
-      transform: scale(1.1);
-      background-color: lighten($black-main, 75%);
-    }
-  }  
+  position: relative;
+  background-color: $black-main;
+  color: $white-main;
+  &:before {
+    @include gradient-shadow(0.4);
+  }
+  &:hover {
+    transform: scale(1.1);
+    background-color: lighten($black-main, 75%);
+  }
+}
 
 // White version
 .white-btn {
-  position: relative;
   background-color: $black-secondary;
   color: $black-main;
 

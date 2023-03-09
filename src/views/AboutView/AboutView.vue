@@ -6,7 +6,7 @@
     </div>
     <div class="btn-container">
         <main-button ref="calButton" data-cal-link="tranivic/15min" color="black">Schedule a call</main-button>
-        <main-button>Contact me</main-button>
+        <main-button :isLink="true" pushTo="/contact">Contact me</main-button>
     </div>
 </section>
 </template>

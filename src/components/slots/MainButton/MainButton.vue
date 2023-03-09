@@ -1,7 +1,10 @@
 <template>
-<button :class="color === 'black' ? 'black-btn' : 'white-btn'">
+<button v-if="!isLink" class="main-button" :class="color === 'black' ? 'black-btn' : 'white-btn'">
     <slot></slot>
 </button>
+<router-link :to="pushTo" class="main-button" v-else :class="color === 'black' ? 'black-btn' : 'white-btn'">
+    <slot></slot>
+</router-link>
 </template>
 
 <script>
@@ -12,6 +15,14 @@ export default {
             type: String,
             default: "",
         },
+        isLink: {
+            type: Boolean,
+            default: false,
+        },
+        pushTo: {
+            type: String,
+            default: '/'
+        }
     },
 };
 </script>
