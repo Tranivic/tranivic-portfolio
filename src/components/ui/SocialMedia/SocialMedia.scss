@@ -1,13 +1,13 @@
 .social-media-menu {
   display: flex;
-  padding: 0.2rem 2rem;
+  padding: 0.5rem $padding-base;
   background-color: $black-secondary;
-  border-radius: $border-radius-base;
+  border-radius: 10rem;
   margin: $margin-base;
   li {
     a {
         padding: 0.3rem 0.5rem;
-        margin: 0 0.5rem;
+        margin: 0 0.2rem;
       i {
         padding: 0.3rem 0.5rem;
         font-size: 2.5rem;

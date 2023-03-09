@@ -1,46 +1,74 @@
 .nav-menu {
   position: relative;
+
   .nav-menu-btn {
     background-color: $black-secondary;
     border-radius: $border-radius-base;
     font-size: $font-size-base;
     font-family: $font-family-primary;
     font-weight: $font-weight-base;
-    padding: 1rem;
+    padding: $padding-base * 0.6;
     cursor: pointer;
     width: 6rem;
+    user-select: none;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background-color: darken($black-secondary, 8%);
+      transform: scale(1.05);
+    }
+
+    &:active {
+      transform: scale(0.97);
+    }
+
     .menu-open,
     .menu-close {
       display: flex;
       align-items: center;
       justify-content: center;
+
       i {
         padding-left: 1rem;
       }
     }
   }
-  .nav-menu-content {
+
+  ul {
     position: absolute;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    top: 4rem;
+    top: 6rem;
     right: 0.1rem;
-    border-radius: $border-radius-base;
-    background-color: $black-secondary;
-    .nav-menu-content-item {
-      padding: 1rem;
-      margin-right: 6rem;
+    padding: 0.2rem;
+    transition: all 0.4s ease;
+    user-select: none;
+    li {
+      display: flex;
+      width: 100%;
       a {
-        padding: 1rem 0;
+        align-self: flex-start;
+        display: flex;
         text-decoration: none;
+        width: 100%;
+        padding: 1.5rem 7em 1.5rem 1rem;
         list-style: none;
         color: $black-main;
-        padding-right: $padding-base;
+        background-color: $white-main;
+        &:hover {
+          background-color: darken($white-main, 4%);
+        }
       }
     }
+
     .nav-menu-content-item:before {
-     @include gradient-shadow(.1)
+      @include gradient-shadow(0.1);
     }
   }
+}
+.v-enter-from,
+.v-leave-to {
+  transform: translateY(-2rem);
+  opacity: 0;
 }
