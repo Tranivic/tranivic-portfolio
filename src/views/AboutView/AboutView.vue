@@ -2,7 +2,7 @@
 <section class="about-page">
     <animated-title firstLine="Hi, hello and welcome stranger"></animated-title>
     <div class="info-container">
-        <p>I'm Victor Trani, a frontend web developer that wants to work remotely around the world. I create ideas, websites, frontend interfaces, and everything in-between. I'm passionate about building & developing delightful experiences, to make customers and users satisfied when theyre using products and services online.</p>
+        <p>I'm Victor Trani, a frontend web developer who's eager to work remotely around the world. My expertise includes generating website ideas and designing frontend interfaces to craft satisfying online experiences for customers and users. I'm deeply passionate about developing web applications that bring value to people's lives.</p>
     </div>
     <div class="btn-container">
         <main-button ref="calButton" data-cal-link="tranivic/15min" color="black">Schedule a call</main-button>

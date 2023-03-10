@@ -30,7 +30,7 @@ export default {
     },
     methods: {
         downloadCv() {
-            this.$store.dispatch('fetchCurriculum')
+            window.open('https://drive.google.com/u/0/uc?id=1k72zHZ2uO-D6K2mgxNM5cVc1_jJHwqE3&export=download', '_blank')
         }
     },
 };

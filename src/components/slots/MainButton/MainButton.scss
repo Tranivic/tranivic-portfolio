@@ -1,4 +1,5 @@
 .main-button {
+  font-family: $font-family-primary;
   font-size: $font-size-base;
   font-weight: $font-weight-title;
   border-radius: $border-radius-base;
@@ -6,7 +7,10 @@
   border: none;
   transition: all 0.4s ease;
 }
-
+a{
+  list-style: none;
+  text-decoration: none;
+}
 // Black version
 .black-btn {
   position: relative;

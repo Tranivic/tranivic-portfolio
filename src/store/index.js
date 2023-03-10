@@ -17,16 +17,6 @@ const store = createStore({
         hideEventTypeDetails: false,
       });
     },
-    async fetchCurriculum() {
-    const response = await fetch('../../src/assets/files/Teste.pdf');
-    const blob = await response.blob();
-    const url = window.URL.createObjectURL(new Blob([blob]));
-    const link = document.createElement('a');
-    link.href = url;
-    link.setAttribute('download', 'Teste.pdf');
-    document.body.appendChild(link);
-    link.click();
-    }
   },
 });
 

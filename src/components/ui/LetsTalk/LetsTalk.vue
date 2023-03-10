@@ -6,7 +6,7 @@
     </div>
     <div class="footer-btns">
         <main-button ref="calButton" data-cal-link="tranivic/15min" type="button" color="black">Schedule a call</main-button>
-        <main-button type="button" color="white">Send me an email</main-button>
+        <main-button :isLink="true" pushTo="/contact" color="white">Send me an email</main-button>
     </div>
 </div>
 </template>
