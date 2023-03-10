@@ -1,0 +1,33 @@
+.contact-form {
+  padding: $padding-base 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: $font-family-secondary;
+  width: 30%;
+  input,
+  textarea {
+    font-family: $font-family-secondary;
+    resize: vertical;
+    font-size: $font-size-base;
+    color: $black-main;
+    border-radius: $border-radius-base;
+    font-weight: $font-weight-title;
+    background-color: darken($black-secondary, 2%);
+    padding: $padding-base;
+    margin: $margin-base * 0.5;
+    border: none;
+    width: 100%;
+    &::placeholder {
+      color: $gray-main;
+    }
+    &:focus {
+        outline: none;
+    }
+  }
+  button{
+    margin-top: $padding-base;
+    padding: 1rem;
+    width: 30%;
+  }
+}
