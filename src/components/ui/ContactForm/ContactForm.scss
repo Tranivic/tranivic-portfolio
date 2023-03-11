@@ -1,9 +1,13 @@
-.contact-form {
-  padding: $padding-base 0;
+.contact-form,
+.response-container {
   display: flex;
   align-items: center;
   flex-direction: column;
   font-family: $font-family-secondary;
+  text-align: center;
+  height: 40rem;
+}
+.contact-form {
   width: 30%;
   input,
   textarea {
@@ -22,12 +26,41 @@
       color: $gray-main;
     }
     &:focus {
-        outline: none;
+      outline: none;
     }
   }
-  button{
+  .error {
+    border: $red-main 0.2rem solid;
+  }
+  button {
     margin-top: $padding-base;
     padding: 1rem;
     width: 30%;
   }
+  label {
+    color: $red-main;
+    align-self: start;
+    font-size: $font-size-small;
+  }
+}
+
+.response-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  font-size: $font-size-title * 1.2;
+}
+.fade-leave-active{
+  position: absolute;
+  transform: translateX(1rem, -1rem);
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.2s ease;
+}
+
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }

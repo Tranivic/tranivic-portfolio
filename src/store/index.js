@@ -17,6 +17,25 @@ const store = createStore({
         hideEventTypeDetails: false,
       });
     },
+    async postMessage(_, payLoad) {
+      try {
+        const response = await fetch(
+          'https://personal-portifoil-default-rtdb.firebaseio.com/messages.json',
+          {
+            method: 'POST',
+            body: JSON.stringify(payLoad),
+          }
+        );
+        if (!response.ok) {
+          throw new Error('Failed to send message, sorry. Try again later!');
+        } else {
+          console.log(response)
+          return 'Thanks for reaching out! ';
+        }
+      } catch (err) {
+        return err.message;
+      }
+    },
   },
 });
 
