@@ -25,7 +25,6 @@
 </template>
 
 <script>
-import AnimatedTitle from '@/components/slots/AnimatedTitle/AnimatedTitle.vue';
 
 export default {
     data() {

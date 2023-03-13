@@ -27,9 +27,11 @@
         }
         .card-top {
             transform: translateY(0%);
+            opacity: 1;
         }
         .card-botton {
             transform: translateY(0%);
+            opacity: 1;
         }
     }
     .card-top {
@@ -38,10 +40,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #292929a1;
+        background-color: #292929d8;
         border-radius: $border-radius-base $border-radius-base 0 0;
         transform: translateY(-100%);
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
+        opacity: 0;
         button {
             padding: $padding-base * 0.5;
         }
@@ -55,7 +58,8 @@
         padding: $padding-base;
         font-family: $font-family-primary;
         transform: translateY(100%);
-        transition: all 0.5s ease;
+        transition: all 0.3s ease;
+        opacity: 0;
         .botton-title {
             font-size: $font-size-base;
             font-weight: 600;
@@ -64,13 +68,14 @@
             font-size: $font-size-small;
             padding: $padding-base 0;
         }
-        .tecnologies-list {
+        .technologies-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
             gap: 1rem;
             padding: $padding-base 0;
-            .tecnologies-item {
-                padding: 0.5rem 1rem;
+            .technologies-item {
+                width: 100%;
+                padding: .5rem .1rem;
                 font-size: $font-size-small;
                 background-color: darken($black-secondary, 10%);
                 border-radius: $border-radius-base;
