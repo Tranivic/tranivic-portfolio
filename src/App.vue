@@ -1,6 +1,6 @@
 <template>
 <app-header></app-header>
-<router-view />
+    <router-view />
 <app-footer></app-footer>
 </template>
 
@@ -28,7 +28,16 @@ body {
     flex-direction: column;
 
     #app {
-        width: 80%;
+        width: 100%;
     }
 }
+// TO DO -------------
+// Vue router transition effects related
+// .router-enter-active, .router-leave-active {
+//   transition: opacity 10s;
+// }
+
+// .router-enter, .router-leave-to {
+//   opacity: 0;
+// }
 </style>

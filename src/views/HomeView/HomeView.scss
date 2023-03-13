@@ -28,6 +28,13 @@
     font-size: $font-size-title;
     padding: 2.5rem 3.5rem;
   }
+  .selected-work-container{
+    h1{
+      padding: $padding-base * 2 0;
+      font-size: $font-size-title * 1.5;
+      font-weight: 700;
+    }
+  }
   .things-i-do-container {
     display: grid;
     align-items: center;

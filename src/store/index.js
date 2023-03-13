@@ -9,7 +9,6 @@ const store = createStore({
   mutations: {},
   actions: {
     async integrateCalApi() {
-      console.log('chamei');
       this.calApi = await getCalApi();
       this.calApi('ui', {
         theme: 'light',

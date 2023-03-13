@@ -4,6 +4,9 @@
     <p class="sub-title">I’m a Software Engineer focused on frontend developing who enjoys turning problems and<br> opportunities into simple interfaces through code.</p>
     <social-media></social-media>
     <main-button ref="calButton" data-cal-link="tranivic/15min" class="hire-btn" color="black">Hire me!</main-button>
+    <div class="selected-work-container">
+        <h1>Selected Work</h1>
+    </div>
     <div class="things-i-do-container">
         <div class="about">
             <h1>Things i do</h1>

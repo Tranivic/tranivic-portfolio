@@ -1,0 +1,11 @@
+.work-page{
+    padding: $padding-base * 3 0;
+    .work-list{
+        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+        gap: 1rem;
+        padding: $padding-base 0;
+        justify-items: center;
+    }
+}
