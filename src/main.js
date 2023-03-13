@@ -8,7 +8,7 @@ import MainButtonComponent from './components/slots/MainButton/MainButton.vue'
 import SocialMediaComponent from './components/ui/SocialMedia/SocialMedia.vue'
 import AnimatedTitleComponent from './components/slots/AnimatedTitle/AnimatedTitle.vue'
 import LetsTalkComponent from './components/ui/LetsTalk/LetsTalk.vue'
-
+import WorkCard from './components/ui/WorkCard/WorkCard.vue'
 const app = createApp(App)
 app.use(store)
 app.use(router)
@@ -16,5 +16,6 @@ app.component('main-button', MainButtonComponent)
 app.component('social-media', SocialMediaComponent)
 app.component('animated-title', AnimatedTitleComponent)
 app.component('lets-talk', LetsTalkComponent)
+app.component('work-card', WorkCard)
 
 app.mount('#app')

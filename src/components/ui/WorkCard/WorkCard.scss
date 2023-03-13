@@ -7,10 +7,8 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  border: 5px $black-secondary solid;
   .backgroud-img {
     position: absolute;
-    border-radius: $border-radius-base;
     width: 42rem;
     height: 40rem;
     background-position: center;
@@ -39,7 +37,6 @@
     justify-content: center;
     align-items: center;
     background-color: #292929d8;
-    border-radius: $border-radius-base $border-radius-base 0 0;
     transform: translateY(-100%);
     transition: all 0.5s ease;
     button {
@@ -47,7 +44,6 @@
     }
   }
   .card-botton {
-    border-radius: 0 0 $border-radius-base $border-radius-base;
     background-color: $black-secondary;
     height: 50%;
     overflow: auto;
@@ -65,19 +61,19 @@
       padding: $padding-base 0;
     }
     .technologies-list {
+      margin: $margin-base 0;
       align-items: center;
       width: 100%;
-      height: 5rem;
       display: grid;
       gap: 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(6rem, 1fr));
-      padding: $padding-base 0;
+      grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+      justify-content: center;
       .technologies-item {
         width: 100%;
         text-align: center;
         padding: 0.5rem 0.1rem;
         font-size: $font-size-small;
-        background-color: darken($black-secondary, 10%);
+        background-color: darken($white-main, 5%);
         border-radius: $border-radius-base;
         text-align: center;
       }

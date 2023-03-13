@@ -6,6 +6,10 @@
     <main-button ref="calButton" data-cal-link="tranivic/15min" class="hire-btn" color="black">Hire me!</main-button>
     <div class="selected-work-container">
         <h1>Selected Work</h1>
+        <ul class="work-list">
+            <work-card v-for="work in selectedWorks" :key="work.name" :work="work" :isShort="false"></work-card>
+        </ul>
+        <main-button :isLink="true" to="/work" color="black">See More</main-button>
     </div>
     <div class="things-i-do-container">
         <div class="about">
@@ -25,7 +29,6 @@
 </template>
 
 <script>
-
 export default {
     data() {
         return {};
@@ -33,6 +36,11 @@ export default {
     methods: {
         downloadCv() {
             window.open('https://drive.google.com/u/0/uc?id=1k72zHZ2uO-D6K2mgxNM5cVc1_jJHwqE3&export=download', '_blank')
+        }
+    },
+    computed: {
+        selectedWorks() {
+            return this.$store.getters.selectedWorks
         }
     },
 };

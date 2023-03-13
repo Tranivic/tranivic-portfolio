@@ -8,16 +8,12 @@
 </template>
 
 <script>
-import WorkCard from '@/components/ui/WorkCard/WorkCard.vue'
 export default {
     created() {
         console.log(this.allWorks);
     },
     data() {
         return {};
-    },
-    components: {
-        WorkCard,
     },
     computed: {
         allWorks() {
