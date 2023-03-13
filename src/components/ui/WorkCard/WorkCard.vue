@@ -26,7 +26,7 @@ export default {
     },
     methods: {
         pushToProject() {
-            window.open(`${this.workwork.link}`, '_blank')
+            window.open(`${this.work.link}`, '_blank')
         }
     },
     computed: {
