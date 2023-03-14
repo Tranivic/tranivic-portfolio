@@ -29,30 +29,45 @@ export default {
         };
     },
     async created() {
-        await this.populateArrays();
-        this.animateWords();
+        this.populateArrays();
+        if (window.screen.width < 992) {
+            this.animateWords()
+            return
+        }
+        window.addEventListener('mousemove', this.animateWords);
+        window.addEventListener('focus', this.animateWords);
+        window.addEventListener('scroll', this.animateWords);
     },
     methods: {
         populateArrays() {
-            if(this.firstLine){
+            if (this.firstLine) {
                 this.firstSequence = this.firstLine.split(' ');
             }
-            if(this.secondLine){
+            if (this.secondLine) {
                 this.secondSequece = this.secondLine.split(' ');
             }
         },
         animateWords() {
-            const items = document.querySelectorAll('.animated-item');
-            let index = 0;
-            const interval = setInterval(() => {
-                items[index].classList.remove('hidden');
-                items[index].classList.add('show');
-                index++;
-                if (index === items.length) {
-                    clearInterval(interval);
-                }
-            }, 100);
+            this.$nextTick(() => {
+                const items = document.querySelectorAll('.animated-item');
+                let index = 0;
+                const interval = setInterval(() => {
+                    items[index].classList.remove('hidden');
+                    items[index].classList.add('show');
+                    index++;
+                    if (index === items.length) {
+                        clearInterval(interval);
+                    }
+                }, 100);
+            }).then(
+                this.removeEventListeners
+            );
         },
+        removeEventListeners() {
+            window.removeEventListener('mousemove', this.animateWords);
+            window.removeEventListener('focus', this.animateWords);
+            window.removeEventListener('scroll', this.animateWords);
+        }
     },
 };
 </script>

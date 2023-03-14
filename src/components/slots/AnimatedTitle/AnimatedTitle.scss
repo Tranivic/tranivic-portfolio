@@ -8,7 +8,7 @@
     display: inline-block;
     margin-left: 1.5rem;
     transition: all 0.3s ease;
-    font-size: 6rem;
+    font-size: $font-size-title * 3;
     font-family: $font-family-primary;
     font-weight: 600;
   }
@@ -20,6 +20,7 @@
   animation: animated-title .6s ease;
 }
 
+// Title animation
 @keyframes animated-title {
   0%{
     opacity: 0;
@@ -34,3 +35,4 @@
     transform: translate(0px, 0px);
   }
 }
+
