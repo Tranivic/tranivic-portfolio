@@ -9,8 +9,8 @@
         <ul class="work-list">
             <work-card v-for="work in selectedWorks" :key="work.name" :work="work" :isShort="false"></work-card>
         </ul>
-        <main-button :isLink="true" to="/work" color="black">See More</main-button>
     </div>
+    <main-button :isLink="true" to="/work" color="black" class="see-more-btn">See More</main-button>
     <div class="things-i-do-container">
         <div class="about">
             <h1>Things i do</h1>

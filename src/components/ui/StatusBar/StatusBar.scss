@@ -48,3 +48,9 @@
     transform: translate(-100%);
   }
 }
+
+@media (max-width: $small-screen) {
+  .status-bar{
+    display: none;
+  } 
+}

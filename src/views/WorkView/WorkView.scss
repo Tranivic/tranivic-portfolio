@@ -7,3 +7,16 @@
         @include work-list
     }
 }
+
+@media (max-width: $small-screen) {
+    .work-page{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        .work-list{
+            padding: 0;
+            margin: 0;
+        }
+    }
+    
+  }

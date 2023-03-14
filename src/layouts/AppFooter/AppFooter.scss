@@ -44,7 +44,7 @@
     }
 }
 
-// Define the keyframes for the shake animation
+// Define the keyframes for emoji shake animation
 @keyframes shake {
     0% { transform: rotate(0); }
     25% { transform: rotate(20deg); }
@@ -52,4 +52,23 @@
     75% { transform: rotate(20deg); }
     100% { transform: rotate(0); }
   }
+
   
+
+@media (max-width: $small-screen) {
+    .app-footer{
+        .nav-menu-flat{
+            flex-direction: column;
+            padding: 0;
+            width: 100%;
+            text-align: center;
+            li{
+                margin: 1rem 0;
+                a{
+                    padding: 0;   
+                    margin: 0; 
+                }
+            }
+        }
+    }
+  }

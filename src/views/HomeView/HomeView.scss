@@ -28,20 +28,26 @@
     font-size: $font-size-title;
     padding: 2.5rem 3.5rem;
   }
-  .selected-work-container{
-    width: 70%;
-    h1{
+  .selected-work-container {
+    width: 100%;
+    h1 {
       padding: $padding-base * 2 0;
       font-size: $font-size-title * 1.5;
       font-weight: 700;
     }
-    .work-list{
-      @include work-list;
+    .work-list {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
       margin-bottom: 3rem;
+      li {
+        margin: 1rem;
+      }
     }
-    a{
-      padding: 1rem $padding-base;
-    }
+  }
+  .see-more-btn {
+    padding: $padding-base * 0.5 $padding-base * 0.6;
+    z-index: 1000;
   }
   .things-i-do-container {
     display: grid;
@@ -69,7 +75,7 @@
     .skills {
       background-color: $black-secondary;
       border-radius: $border-radius-base;
-      padding: $padding-base *2;
+      padding: $padding-base * 2;
       p {
         font-size: 1.8rem;
         line-height: 2.3rem;
@@ -80,6 +86,28 @@
         button {
           padding: $padding-base * 0.6;
         }
+      }
+    }
+  }
+}
+@media (max-width: $small-screen) {
+  .home-page {
+    .selected-work-container {
+      width: 100%;
+      .work-list {
+        flex-direction: column;
+        padding: 1rem;
+      }
+    }
+    .things-i-do-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      p {
+        text-align: center;
+      }
+      div {
+        align-items: center;
       }
     }
   }

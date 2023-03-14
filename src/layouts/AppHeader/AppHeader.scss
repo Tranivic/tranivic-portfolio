@@ -1,18 +1,36 @@
 @import '../../assets/scss/setup/variables.scss';
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: $padding-base *2 0;
-  font-family: $font-family-primary;
-  .logo {
-    a {
-      font-family: $font-family-secondary;
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: $black-main;
-      cursor: pointer;
-      text-decoration: none;
+  justify-content: center;
+  .header-content{
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $padding-base *2 0;
+    font-family: $font-family-primary;
+    .logo {
+      a {
+        font-family: $font-family-secondary;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: $black-main;
+        cursor: pointer;
+        text-decoration: none;
+      }
+    }
+  }
+}
+@media (max-width: $small-screen) {
+  .header-content{
+    width: 100%;
+  }
+}
+@media (min-width: $large-screen) {
+  header{
+    .header-content{
+      width: 80%;
     }
   }
 }

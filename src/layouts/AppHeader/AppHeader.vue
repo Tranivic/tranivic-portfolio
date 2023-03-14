@@ -1,10 +1,12 @@
 <template>
 <header>
-    <div class="logo">
-        <routerLink to="/">victortrani.</routerLink>
+    <div class="header-content">
+        <div class="logo">
+            <routerLink to="/">victortrani.</routerLink>
+        </div>
+        <status-bar></status-bar>
+        <nav-menu></nav-menu>
     </div>
-    <status-bar></status-bar>
-    <nav-menu></nav-menu>
 </header>
 </template>
 
