@@ -13,15 +13,24 @@
     font-weight: 600;
   }
 }
-
-.hidden {
+.hidden{
   opacity: 0;
-  transform: translate(10px, 10px);
 }
-
 .show {
-  opacity: 1;
-  transform: scale(1);
-  transform: translate(-10px, -10px);
+  animation: animated-title .6s ease;
 }
 
+@keyframes animated-title {
+  0%{
+    opacity: 0;
+    transform: translate(10px, 10px);
+  }
+  50%{
+    opacity: .8;
+    transform: translate(-11px, -11px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}

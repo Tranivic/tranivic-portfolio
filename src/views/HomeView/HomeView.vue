@@ -14,7 +14,7 @@
     <div class="things-i-do-container">
         <div class="about">
             <h1>Things i do</h1>
-            <p>Coding, strategy, management & development are my specialities, and I have had nearly 2 year honing in my skills. In all my project, I find that efficient work - flows, excellent communication skills and a dose of self-discipline are key - a strong work ethic has driven my success in a myriad of specialties.</p>
+            <p>Coding, strategy, management & development are my specialities, and I have had nearly 2 year honing in my skills. In all my project, I find that efficient work - flows, good communication skills and a dose of self-discipline are key - a strong work ethic will drive my success in a myriad of specialties.</p>
         </div>
         <div class="skills">
             <h1>Skills</h1>
