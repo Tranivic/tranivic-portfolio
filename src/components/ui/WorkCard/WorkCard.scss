@@ -79,16 +79,32 @@
       }
     }
     &::-webkit-scrollbar {
-      width: 12px;
+      width: 8px;
       background-color: darken($black-secondary, 2%);
     }
-
+  
     &::-webkit-scrollbar-thumb {
-      background-color: $black-main; // set color of scrollbar thumb
+      background-color: $black-main;
     }
-
+  
     &::-webkit-scrollbar-button {
-      display: none; // hide scrollbar buttons
+      display: none;
+    }
+  
+    /* Firefox scrollbar styling */
+    scrollbar-width: thin;
+    scrollbar-color: $black-main darken($black-secondary, 2%);
+  
+    &::-moz-scrollbar {
+      background-color: darken($black-secondary, 2%);
+    }
+  
+    &::-moz-scrollbar-thumb {
+      background-color: $black-main;
+    }
+  
+    &::-moz-scrollbar-button {
+      display: none;
     }
   }
 }

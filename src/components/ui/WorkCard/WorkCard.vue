@@ -16,15 +16,6 @@
         <h1 class="botton-title">Status: {{ this.underConstruction }}</h1>
     </div>
 </li>
-<li v-else class="work-card-short">
-    <div class="top-short-card">
-        <h1>{{ work.name }}</h1>
-    </div>
-    <div class="botton-short-card">
-        <p>{{ work.description }}</p>
-        <span>Development</span>
-    </div>
-</li>
 </template>
 
 <script>
