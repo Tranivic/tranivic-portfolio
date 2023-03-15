@@ -24,7 +24,7 @@
         <social-media></social-media>
     </div>
     <div class="emoji-container">
-        <span>⚡</span>
+        <h1>⚡</h1>
     </div>
 
 </footer>

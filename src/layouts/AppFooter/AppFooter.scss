@@ -1,74 +1,90 @@
-.app-footer{
-    font-family: $font-family-secondary;
+.app-footer {
+  font-family: $font-family-secondary;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .nav-menu-flat {
     display: flex;
-    flex-direction: column;
+    padding: 0.5rem;
+    li {
+      a {
+        text-decoration: none;
+        list-style: none;
+        color: $gray-main;
+        font-size: $font-size-base * 1.2;
+        font-weight: $font-weight-title;
+        margin: 0.5rem;
+        padding: 1rem;
+        transition: all 0.3s ease-in-out;
+        &:hover {
+          color: darken($gray-main, 100%);
+        }
+      }
+    }
+  }
+  .emoji-container {
+    display: flex;
     justify-content: center;
     align-items: center;
-    .nav-menu-flat{
-        display: flex;
-        padding: .5rem;
-        li{
-            a{
-                text-decoration: none;
-                list-style: none;
-                color: $gray-main;
-                font-size: $font-size-base * 1.2;
-                font-weight: $font-weight-title;
-                margin: .5rem;
-                padding: 1rem;
-                transition: all 0.3s ease-in-out;
-                &:hover{
-                    color: darken($gray-main, 100%);
-                }
-            }
-        }
+    margin: 4rem 0;
+    height: 5rem;
+    width: 100%;
+    h1 {
+      transition: all 0.3s ease-in-out;
+      font-size: 5rem;
+      cursor: pointer;
+      &:not(:hover){
+        animation: return-animation .2s;
+      }
+      &:hover {
+        animation: shake-animation 1s infinite;
+      }
     }
-    .emoji-container{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 4rem 0;
-        height: 5rem;
-        width: 100%;
-        span{
-            transition: all 0.3s ease-in-out;
-            font-size: 5rem;
-            cursor: pointer;
-            &:active{
-                font-size: 4rem;
-            }
-            &:hover{
-                animation: shake 1s infinite;
-            }
-        }
-    }
+  }
 }
 
 // Define the keyframes for emoji shake animation
-@keyframes shake {
-    0% { transform: rotate(0); }
-    25% { transform: rotate(20deg); }
-    50% { transform: rotate(-20deg); }
-    75% { transform: rotate(20deg); }
-    100% { transform: rotate(0); }
+@keyframes shake-animation {
+  0% {
+    transform: rotate(0) scale(1);
   }
-
-  
-
-@media (max-width: $small-screen) {
-    .app-footer{
-        .nav-menu-flat{
-            flex-direction: column;
-            padding: 0;
-            width: 100%;
-            text-align: center;
-            li{
-                margin: 1rem 0;
-                a{
-                    padding: 0;   
-                    margin: 0; 
-                }
-            }
-        }
+  25% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  50% {
+    transform: rotate(-20deg) scale(1.25);
+  }
+  75% {
+    transform: rotate(20deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(0) scale(1) ;
+  }
+}
+@keyframes return-animation {
+    from{
+        transform: scale(1.25)
+    }
+    to{
+        transform: rotate(0) scale(1) ;
     }
   }
+
+@media (max-width: $small-screen) {
+  .app-footer {
+    .nav-menu-flat {
+      flex-direction: column;
+      padding: 0;
+      width: 100%;
+      text-align: center;
+      li {
+        margin: 1rem 0;
+        a {
+          padding: 0;
+          margin: 0;
+        }
+      }
+    }
+  }
+}
