@@ -18,7 +18,7 @@
         </div>
         <div class="skills">
             <h1>Skills</h1>
-            <p>HTML / CSS / SASS / JS / Vue / Nuxt.js / Tailwind CSS / TypeScript / Figma / Adobe XD</p>
+            <p>HTML / CSS / SASS / JS / Vue / Nuxt.js / Tailwind CSS / Bootstrap / TypeScript / Figma / Adobe XD</p>
             <div class="btn-container">
                 <main-button @click="downloadCv" class="download-btn" color="black">Download CV</main-button>
             </div>

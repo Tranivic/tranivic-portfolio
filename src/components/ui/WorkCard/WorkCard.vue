@@ -39,7 +39,7 @@ export default {
             if (this.work.underConstruction) {
                 return 'Project under construction 🚧';
             } else {
-                return 'Project finalized ✅';
+                return 'Finished project ✅';
             }
         },
     },
