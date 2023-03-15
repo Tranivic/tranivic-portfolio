@@ -27,6 +27,10 @@ const router = createRouter({
       name: 'Work',
       component: WorkView,
     },
+    {
+      path: '/:notFound(.*)',
+      redirect: '/'
+    },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
