@@ -1,20 +1,21 @@
 .social-media-menu {
+  width: 30rem;
   display: flex;
+  align-items: center;
+  justify-content: space-around;
   padding: 0.5rem $padding-base;
   background-color: $black-secondary;
   border-radius: 10rem;
-  margin: $margin-base;
+  margin: $margin-base 0;
   li {
     a {
-      padding: 0.3rem 0.5rem;
-      margin: 0 0.2rem;
       i {
         padding: 0.3rem 0.5rem;
         font-size: 2.5rem;
         color: $gray-main;
         border-radius: 40%;
         cursor: pointer;
-        transition: all 0.4s ease-in-out;
+        transition: all 0.3s ease-in-out;
         &:hover {
           transform: scale(1.1);
         }
@@ -56,4 +57,18 @@
 .fa-whatsapp:hover {
   color: white;
   background-color: #25d366;
+}
+
+// Responsive
+@media (max-width: $small-screen) {
+  .social-media-menu {
+    width: 70%;
+    li {
+      a {
+        i {
+          padding: 0;
+        }
+      }
+    }
+  }
 }
