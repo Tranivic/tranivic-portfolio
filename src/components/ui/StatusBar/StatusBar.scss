@@ -15,10 +15,10 @@
   padding: $padding-base * 0.4;
   cursor: pointer;
   transition: all 0.3s ease;
-&:hover{
-  transform: scale(1.05);
-  border: 1px solid $gray-main;
-}
+  &:hover {
+    transform: scale(1.05);
+    border: 1px solid $gray-main;
+  }
   .status-message {
     white-space: nowrap;
     display: flex;
@@ -49,8 +49,9 @@
   }
 }
 
+// Responsive
 @media (max-width: $small-screen) {
-  .status-bar{
+  .status-bar {
     display: none;
-  } 
+  }
 }

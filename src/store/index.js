@@ -58,8 +58,7 @@ const store = createStore({
       {
         id: 5,
         name: 'Fake Store Landing Page',
-        description:
-          "Project created to train Bootstrap and semantic html.",
+        description: 'Project created to train Bootstrap and semantic html.',
         technologies: ['Jquery', 'Bootstrap', 'Js'],
         link: 'https://tranivic.github.io/fakestore-website/',
         underConstruction: false,

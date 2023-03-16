@@ -1,15 +1,15 @@
 <template>
 <app-header></app-header>
-    <router-view />
+<router-view />
 <app-footer></app-footer>
 </template>
 
 <script>
-import AppHeader from "@/layouts/AppHeader/AppHeader.vue";
-import AppFooter from "@/layouts/AppFooter/AppFooter.vue";
+import AppHeader from '@/layouts/AppHeader/AppHeader.vue';
+import AppFooter from '@/layouts/AppFooter/AppFooter.vue';
 export default {
-    created () {
-        this.$store.dispatch('integrateCalApi')
+    created() {
+        this.$store.dispatch('integrateCalApi');
     },
     components: {
         AppHeader,
@@ -19,8 +19,9 @@ export default {
 </script>
 
 <style lang="scss">
-@import "assets/scss/global.scss";
+@import 'assets/scss/global.scss';
 
+// Base app scss setups
 body {
     display: flex;
     align-items: center;

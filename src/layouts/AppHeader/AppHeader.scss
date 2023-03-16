@@ -3,12 +3,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  .header-content{
+  .header-content {
     width: 98%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: $padding-base *2 0;
+    padding: $padding-base * 2 0;
     font-family: $font-family-primary;
     .logo {
       a {
@@ -22,14 +22,16 @@ header {
     }
   }
 }
+
+// Responsive
 @media (max-width: $small-screen) {
-  .header-content{
+  .header-content {
     width: 100%;
   }
 }
 @media (min-width: $large-screen) {
-  header{
-    .header-content{
+  header {
+    .header-content {
       width: 80%;
     }
   }

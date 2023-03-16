@@ -9,11 +9,10 @@
 
 <script>
 export default {
-    name: "MainButton",
     props: {
         color: {
             type: String,
-            default: "",
+            default: '',
         },
         isLink: {
             type: Boolean,
@@ -21,12 +20,12 @@ export default {
         },
         pushTo: {
             type: String,
-            default: '/'
-        }
+            default: '/',
+        },
     },
 };
 </script>
 
 <style lang="scss" scoped>
-@import "MainButton.scss"
+@import 'MainButton.scss';
 </style>

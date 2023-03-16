@@ -10,6 +10,7 @@
     font-family: $font-family-primary;
     font-size: $font-size-title * 1.4;
     font-weight: 600;
+    color: $black-main;
   }
   p {
     font-family: $font-family-secondary;
@@ -90,7 +91,12 @@
     }
   }
 }
+
+// Responsive
 @media (max-width: $small-screen) {
+  p {
+    font-size: $font-size-base * 1.2 !important;
+  }
   .home-page {
     .selected-work-container {
       width: 100%;
@@ -103,15 +109,22 @@
       display: flex;
       flex-direction: column;
       width: 100%;
-      p {
-        text-align: center;
-      }
       div {
         align-items: center;
+      }
+      .about {
+        padding: 0;
+        margin: 0;
+        p {
+          line-height: 2rem;
+          text-align: center;
+          padding: $padding-base;
+        }
       }
     }
   }
 }
+
 @media (max-width: $medium-screen) {
   .home-page {
     .selected-work-container {

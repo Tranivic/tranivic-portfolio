@@ -31,9 +31,7 @@
 </template>
 
 <script>
-export default {
-    name: "AppFooter",
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>

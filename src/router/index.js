@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomeView from '../views/HomeView/HomeView.vue';
-import AboutView from '../views/AboutView/AboutView.vue'
-import ContactView from '../views/ContactView/ContactView.vue'
-import WorkView from '../views/WorkView/WorkView.vue'
+import AboutView from '../views/AboutView/AboutView.vue';
+import ContactView from '../views/ContactView/ContactView.vue';
+import WorkView from '../views/WorkView/WorkView.vue';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -29,14 +29,14 @@ const router = createRouter({
     },
     {
       path: '/:notFound(.*)',
-      redirect: '/'
+      redirect: '/',
     },
   ],
   scrollBehavior(to, from, savedPosition) {
     if (savedPosition) {
-      return savedPosition
+      return savedPosition;
     } else {
-      return { top: 0 }
+      return { top: 0 };
     }
   },
 });

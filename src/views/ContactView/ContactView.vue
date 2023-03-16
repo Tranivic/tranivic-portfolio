@@ -1,7 +1,7 @@
 <template>
 <section class="contact-page">
-<animated-title firstLine="Contact"></animated-title>
-<contact-form></contact-form>
+    <animated-title firstLine="Contact"></animated-title>
+    <contact-form></contact-form>
 </section>
 </template>
 
@@ -9,7 +9,9 @@
 import ContactForm from '@/components/ui/ContactForm/ContactForm.vue';
 
 export default {
-    components: { ContactForm }
+    components: {
+        ContactForm
+    }
 }
 </script>
 

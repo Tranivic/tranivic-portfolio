@@ -28,33 +28,34 @@
 }
 
 @media (max-width: $small-screen) {
-    .about-page{
-        padding: $padding-base *3 0;
-        .info-container{
-            display: flex;
-            justify-content: center;
-            p{
-                font-family: $font-family-secondary;
-                color: $gray-main;
-                font-size: $font-size-base *1.4;
-                line-height: 4rem;
-                text-align: center;
-                padding:0;
-                width: 100%;
-            }
-        }
-        .btn-container{
-
-            justify-content: space-evenly;
-            button, a{
-                padding: $padding-base;
-                margin-right: 0;
-            }
-        }
-      
+  .about-page {
+    padding: $padding-base * 3 0;
+    .info-container {
+      display: flex;
+      justify-content: center;
+      p {
+        font-family: $font-family-secondary;
+        color: $gray-main;
+        font-size: $font-size-base * 1.4;
+        line-height: 4rem;
+        text-align: center;
+        padding: 0;
+        width: 100%;
+      }
     }
+    .btn-container {
+      justify-content: space-evenly;
+      button,
+      a {
+        padding: $padding-base;
+        margin-right: 0;
+      }
+    }
+  }
 }
 
+
+// Responsive
 @media (max-width: $medium-screen) {
   .contact-form {
     width: 80%;

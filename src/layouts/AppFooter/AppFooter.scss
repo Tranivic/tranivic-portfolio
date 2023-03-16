@@ -34,8 +34,8 @@
       transition: all 0.3s ease-in-out;
       font-size: 5rem;
       cursor: pointer;
-      &:not(:hover){
-        animation: return-animation .2s;
+      &:not(:hover) {
+        animation: return-animation 0.2s;
       }
       &:hover {
         animation: shake-animation 1s infinite;
@@ -59,18 +59,20 @@
     transform: rotate(20deg) scale(1.2);
   }
   100% {
-    transform: rotate(0) scale(1) ;
+    transform: rotate(0) scale(1);
   }
 }
-@keyframes return-animation {
-    from{
-        transform: scale(1.25)
-    }
-    to{
-        transform: rotate(0) scale(1) ;
-    }
-  }
 
+@keyframes return-animation {
+  from {
+    transform: scale(1.25);
+  }
+  to {
+    transform: rotate(0) scale(1);
+  }
+}
+
+// Responsive
 @media (max-width: $small-screen) {
   .app-footer {
     .nav-menu-flat {

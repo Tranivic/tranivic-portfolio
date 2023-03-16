@@ -7,10 +7,11 @@
   border: none;
   transition: all 0.4s ease;
 }
-a{
+a {
   list-style: none;
   text-decoration: none;
 }
+
 // Black version
 .black-btn {
   position: relative;
@@ -23,7 +24,7 @@ a{
     transform: scale(1.1);
     background-color: lighten($black-main, 75%);
   }
-  &:active{
+  &:active {
     transform: scale(0.9);
   }
 }
@@ -37,7 +38,7 @@ a{
     transform: scale(1.1);
     background-color: darken($black-secondary, 10%);
   }
-  &:active{
+  &:active {
     transform: scale(0.9);
   }
 }

@@ -87,7 +87,7 @@ export default {
         preventInputInvalid(e) {
             var regex = /^[a-zA-Z ]*$/;
             const inputIsValide = regex.test(e.key)
-            if (!inputIsValide){
+            if (!inputIsValide) {
                 e.preventDefault();
             }
         }

@@ -2,7 +2,7 @@
 <div class="lets-talk-container">
     <div class="talk-info">
         <h1>Let's Talk about Your Project.</h1>
-        <h2>Something on your mind? Get in touch and let's chat!</h2>
+        <p>Something on your mind? Get in touch and let's chat!</p>
     </div>
     <div class="footer-btns">
         <main-button ref="calButton" data-cal-link="tranivic/15min" type="button" color="black">Schedule a call</main-button>
@@ -13,7 +13,6 @@
 
 <script>
 export default {
-
 }
 </script>
 
