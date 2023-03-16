@@ -1,6 +1,6 @@
 <template>
 <div class="nav-menu">
-    <div @click="toggleMenu" class="nav-menu-btn">
+    <button @click="toggleMenu" class="nav-menu-btn">
         <span v-if="!menuIsOpen" class="menu-open">
             <h1>Menu</h1>
             <i class="fas fa-bars"></i>
@@ -9,7 +9,7 @@
             <h1>Close</h1>
             <i class="fas fa-times"></i>
         </span>
-    </div>
+    </button>
     <transition name="menu">
         <div v-if="menuIsOpen" class="backgroud-linear-gradient">
             <ul class="nav-menu-content">
