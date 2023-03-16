@@ -10,24 +10,26 @@
             <i class="fas fa-times"></i>
         </span>
     </div>
-    <transition>
-        <ul v-if="menuIsOpen" class="nav-menu-content">
-            <li @click="toggleMenu" class="nav-menu-content-item">
-                <router-link to="/about">About</router-link>
-            </li>
-            <li @click="toggleMenu" class="nav-menu-content-item">
-                <router-link to="/contact">Contact</router-link>
-            </li>
-            <li @click="toggleMenu" class="nav-menu-content-item">
-                <router-link to="/work">Work</router-link>
-            </li>
-            <li @click="toggleMenu" class="nav-menu-content-item">
-                <a href="https://www.linkedin.com/in/victor-martins-t/" target="_blank">Linkedin</a>
-            </li>
-            <li @click="toggleMenu" class="nav-menu-content-item">
-                <a href="https://github.com/Tranivic" target="_blank">Github</a>
-            </li>
-        </ul>
+    <transition name="menu">
+        <div v-if="menuIsOpen" class="backgroud-linear-gradient">
+            <ul class="nav-menu-content">
+                <li @click="toggleMenu" class="nav-menu-content-item">
+                    <router-link to="/about">About</router-link>
+                </li>
+                <li @click="toggleMenu" class="nav-menu-content-item">
+                    <router-link to="/contact">Contact</router-link>
+                </li>
+                <li @click="toggleMenu" class="nav-menu-content-item">
+                    <router-link to="/work">Work</router-link>
+                </li>
+                <li @click="toggleMenu" class="nav-menu-content-item">
+                    <a href="https://www.linkedin.com/in/victor-martins-t/" target="_blank">Linkedin</a>
+                </li>
+                <li @click="toggleMenu" class="nav-menu-content-item">
+                    <a href="https://github.com/Tranivic" target="_blank">Github</a>
+                </li>
+            </ul>
+        </div>
     </transition>
 </div>
 </template>
