@@ -38,7 +38,7 @@
     align-items: center;
     background-color: #292929d8;
     transform: translateY(-100%);
-    transition: all 0.5s ease 0.2s;
+    transition: all 0.4s ease;
     button {
       padding: $padding-base * 0.5;
     }
@@ -51,7 +51,7 @@
     padding: $padding-base;
     font-family: $font-family-primary;
     transform: translateY(100%);
-    transition: all 0.5s ease 0.2s;
+    transition: all 0.5s ease;
     .botton-title {
       font-size: $font-size-base;
       font-weight: 600;
