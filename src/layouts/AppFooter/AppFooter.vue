@@ -1,22 +1,22 @@
 <template>
 <footer class="app-footer">
     <ul class="nav-menu-flat">
-        <li @click="toggleMenu" class="nav-menu-content-item">
-            <router-link to="/">Home</router-link>
+        <li class="nav-menu-content-item">
+            <button @click="pushToRoute('/home')" >Home</button>
         </li>
-        <li @click="toggleMenu" class="nav-menu-content-item">
-            <router-link to="/about">About</router-link>
+        <li class="nav-menu-content-item">
+            <button @click="pushToRoute('/about')" > About</button>
         </li>
-        <li @click="toggleMenu" class="nav-menu-content-item">
-            <router-link to="/contact">Contact</router-link>
+        <li class="nav-menu-content-item">
+            <button @click="pushToRoute('/contact')" >Contact</button>
         </li>
-        <li @click="toggleMenu" class="nav-menu-content-item">
-            <router-link to="/work">Work</router-link>
+        <li class="nav-menu-content-item">
+            <button @click="pushToRoute('/work')" >Work</button>
         </li>
-        <li @click="toggleMenu" class="nav-menu-content-item">
+        <li class="nav-menu-content-item">
             <a href="https://www.linkedin.com/in/victor-martins-t/" target="_blank">Linkedin</a>
         </li>
-        <li @click="toggleMenu" class="nav-menu-content-item">
+        <li class="nav-menu-content-item">
             <a href="https://github.com/Tranivic" target="_blank">Github</a>
         </li>
     </ul>
@@ -26,14 +26,23 @@
     <div class="emoji-container">
         <h1>⚡</h1>
     </div>
-
 </footer>
 </template>
 
 <script>
-export default {};
+export default {
+    methods: {
+        pushToRoute(path) {
+            if(this.$route.path === path){
+                window.scrollTo(0,0)
+                return
+            }
+            this.$router.push(path)
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>
-@import "AppFooter.scss";
+@import 'AppFooter.scss';
 </style>
