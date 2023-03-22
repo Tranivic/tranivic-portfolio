@@ -6,8 +6,7 @@
     </div>
     <div class="card-botton">
         <h1 class="botton-title">{{ work.name }}</h1>
-        <p class="botton-description">{{ work.description }}</p>
-        <h1 class="botton-title">Technologies:</h1>
+        <p class="botton-description">{{ workDescription }}</p>
         <ul class="technologies-list">
             <li v-for="technologie in work.technologies" :key="technologie" class="technologies-item">
                 {{ technologie }}
@@ -35,13 +34,28 @@ export default {
         },
     },
     computed: {
-        underConstruction() {
-            if (this.work.underConstruction) {
-                return 'Project under construction 🚧';
-            } else {
-                return 'Finished project ✅';
+        workDescription(){
+            if(this.languageSelected === 'en'){
+                return this.work.description
+            } else{
+                return this.work.descriptionPt
             }
         },
+        underConstruction() {
+            if (this.work.underConstruction && this.languageSelected === 'en') {
+                return 'Project Under Construction 🚧';
+            } else if (!this.work.underConstruction && this.languageSelected === 'en') {
+                return 'Finished Project ✅';
+            }
+            if (this.work.underConstruction && this.languageSelected === 'br') {
+                return 'Projeto em construção 🚧';
+            } else if (!this.work.underConstruction && this.languageSelected === 'br') {
+                return 'Projeto Finalizado ✅';
+            }
+        },
+        languageSelected() {
+            return this.$store.getters.getSelectedLanguage
+        }
     },
 };
 </script>
