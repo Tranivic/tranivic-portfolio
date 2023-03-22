@@ -1,18 +1,23 @@
 <template>
 <div class="lets-talk-container">
     <div class="talk-info">
-        <h1>Let's Talk about Your Project.</h1>
-        <p>Something on your mind? Get in touch and let's chat!</p>
+        <h1>{{ globalObject.letsTalkTitle }}</h1>
+        <p>{{ globalObject.letsTalkDescription }}</p>
     </div>
     <div class="footer-btns">
-        <main-button ref="calButton" data-cal-link="tranivic/15min" type="button" color="black">Schedule a call</main-button>
-        <main-button :isLink="true" pushTo="/contact" color="white">Send me an email</main-button>
+        <main-button ref="calButton" data-cal-link="tranivic/15min" type="button" color="black">{{ globalObject.letsTalkCallButton }}</main-button>
+        <main-button :isLink="true" pushTo="/contact" color="white">{{ globalObject.letsTalkEmailButton }}</main-button>
     </div>
 </div>
 </template>
 
 <script>
 export default {
+    computed: {
+        globalObject() {
+            return this.$store.getters.getlanguageObject 
+        }
+    },
 }
 </script>
 

@@ -1,17 +1,17 @@
 <template>
 <footer class="app-footer">
-    <ul class="nav-menu-flat">
+    <ul v-if="globalObject.navMenu" class="nav-menu-flat">
         <li class="nav-menu-content-item">
-            <button @click="pushToRoute('/home')" >Home</button>
+            <button @click="pushToRoute('/home')" >{{ globalObject.navMenu.homeButton }}</button>
         </li>
         <li class="nav-menu-content-item">
-            <button @click="pushToRoute('/about')" > About</button>
+            <button @click="pushToRoute('/about')" > {{ globalObject.navMenu.aboutButton }}</button>
         </li>
         <li class="nav-menu-content-item">
-            <button @click="pushToRoute('/contact')" >Contact</button>
+            <button @click="pushToRoute('/contact')" >{{ globalObject.navMenu.contactButton }}</button>
         </li>
         <li class="nav-menu-content-item">
-            <button @click="pushToRoute('/work')" >Work</button>
+            <button @click="pushToRoute('/work')" >{{ globalObject.navMenu.workButton }}</button>
         </li>
         <li class="nav-menu-content-item">
             <a href="https://www.linkedin.com/in/victor-martins-t/" target="_blank">Linkedin</a>
@@ -39,6 +39,11 @@ export default {
             }
             this.$router.push(path)
         },
+    },
+    computed: {
+        globalObject() {
+            return this.$store.getters.getlanguageObject 
+        }
     },
 };
 </script>

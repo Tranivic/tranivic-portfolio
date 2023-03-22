@@ -1,23 +1,23 @@
 <template>
 <section class="home-page">
-    <animated-title firstLine="Hi, I’m Victor Trani." secondLine="I project, code and grow internet software."></animated-title>
-    <p class="sub-title">I’m a Software Engineer focused on frontend developing who enjoys turning problems and<br> opportunities into simple interfaces through code.</p>
+    <animated-title v-if="globalObject.titleFirstLine" :firstLine="globalObject.titleFirstLine" :secondLine="globalObject.titleSecondLine"></animated-title>
+    <p class="sub-title">{{ globalObject.description }}</p>
     <social-media></social-media>
-    <main-button ref="calButton" data-cal-link="tranivic/15min" class="hire-btn" color="black">Hire me!</main-button>
+    <main-button ref="calButton" data-cal-link="tranivic/15min" class="hire-btn" color="black">{{globalObject.hireMeButton}}</main-button>
     <div class="selected-work-container">
-        <h1>Selected Work</h1>
+        <h1>{{globalObject.selectedWork}}</h1>
         <ul class="work-list">
             <work-card v-for="work in selectedWorks" :key="work.name" :work="work" :isShort="false"></work-card>
         </ul>
     </div>
-    <main-button :isLink="true" to="/work" color="black" class="see-more-btn">See More</main-button>
+    <main-button :isLink="true" to="/work" color="black" class="see-more-btn">{{globalObject.selectedWorkButton}}</main-button>
     <div class="things-i-do-container">
         <div class="about">
-            <h1>Things i do</h1>
-            <p>Coding, strategy, management & development are my specialities, and I have had nearly 2 year honing in my skills. In all my project, I find that efficient work - flows, good communication skills and a dose of self-discipline are key - a strong work ethic will drive my success in a myriad of specialties.</p>
+            <h1>{{  globalObject.thingsIDoTitle}}</h1>
+            <p>{{ globalObject.thingsIDoDescription }}</p>
         </div>
         <div class="skills">
-            <h1>Skills</h1>
+            <h1>{{ globalObject.skillsTitle }}</h1>
             <p>HTML / CSS / SASS / JS / Vue / Nuxt.js / Tailwind CSS / Bootstrap / TypeScript / Figma / Adobe XD</p>
             <div class="btn-container">
                 <main-button @click="downloadCv" class="download-btn" color="black">Download CV</main-button>
@@ -41,6 +41,9 @@ export default {
     computed: {
         selectedWorks() {
             return this.$store.getters.selectedWorks
+        },
+        globalObject(){
+            return this.$store.getters.getlanguageObject
         }
     },
 };

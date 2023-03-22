@@ -1,12 +1,12 @@
 <template>
-<div class="nav-menu">
+<div v-if="globalNavMenu" class="nav-menu">
     <button @click="toggleMenu" class="nav-menu-btn">
         <span v-if="!menuIsOpen" class="menu-open">
-            <h1>Menu</h1>
+            <h1>{{ globalNavMenu.titleOpen }}</h1>
             <i class="fas fa-bars"></i>
         </span>
         <span v-else class="menu-close">
-            <h1>Close</h1>
+            <h1>{{ globalNavMenu.titleClose }}</h1>
             <i class="fas fa-times"></i>
         </span>
     </button>
@@ -14,13 +14,13 @@
         <div v-if="menuIsOpen" class="backgroud-linear-gradient">
             <ul class="nav-menu-content">
                 <li @click="toggleMenu" class="nav-menu-content-item">
-                    <router-link to="/about">About</router-link>
+                    <router-link to="/about">{{globalNavMenu.aboutButton}}</router-link>
                 </li>
                 <li @click="toggleMenu" class="nav-menu-content-item">
-                    <router-link to="/contact">Contact</router-link>
+                    <router-link to="/contact">{{globalNavMenu.contactButton}}</router-link>
                 </li>
                 <li @click="toggleMenu" class="nav-menu-content-item">
-                    <router-link to="/work">Work</router-link>
+                    <router-link to="/work">{{globalNavMenu.workButton}}</router-link>
                 </li>
                 <li @click="toggleMenu" class="nav-menu-content-item">
                     <a href="https://www.linkedin.com/in/victor-martins-t/" target="_blank">Linkedin</a>
@@ -38,15 +38,26 @@
 export default {
     data() {
         return {
-            menuIsOpen: false
-        }
+            menuIsOpen: false,
+        };
     },
     methods: {
         toggleMenu() {
             this.menuIsOpen = !this.menuIsOpen;
-        }
+        },
     },
-}
+    computed: {
+        globalNavMenu() {
+            return this.$store.getters.getlanguageObject.navMenu;
+        },
+    },
+    watch: {
+        globalNavMenu(newValue, oldValue) {
+            console.log(oldValue);
+            console.log(newValue);
+        },
+    },
+};
 </script>
 
 <style lang="scss" scoped>

@@ -8,8 +8,10 @@
 import AppHeader from '@/layouts/AppHeader/AppHeader.vue';
 import AppFooter from '@/layouts/AppFooter/AppFooter.vue';
 export default {
-    created() {
-        this.$store.dispatch('integrateCalApi');
+    async beforeMount() {
+        await this.$store.dispatch('integrateCalApi');
+        await this.$store.dispatch('fetchProjects');
+        await this.$store.dispatch('fetchLanguage');
     },
     components: {
         AppHeader,
@@ -27,6 +29,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
     #app {
         width: 100%;
     }

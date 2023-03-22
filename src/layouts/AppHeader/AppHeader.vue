@@ -5,7 +5,11 @@
             <routerLink to="/">victortrani.</routerLink>
         </div>
         <status-bar></status-bar>
-        <nav-menu></nav-menu>
+        <div class="menu-container">
+            <language-button></language-button>
+            <nav-menu></nav-menu>
+        </div>
+
     </div>
 </header>
 </template>
@@ -13,10 +17,13 @@
 <script>
 import StatusBar from "@/components/ui/StatusBar/StatusBar.vue";
 import NavMenu from "@/components/ui/NavMenu/NavMenu.vue";
+import LanguageButton from "@/components/LanguageButton/LanguageButton.vue";
+
 export default {
     components: {
         StatusBar,
         NavMenu,
+        LanguageButton,
     },
 }
 </script>

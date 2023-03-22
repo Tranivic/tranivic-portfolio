@@ -1,13 +1,13 @@
 <template>
 <transition name="fade">
     <form v-if="!postResponse" class="contact-form" @submit.prevent="submitMessage">
-        <input @keypress="preventInputInvalid($event)" @focus="cleanError" :class="{ error: !!name.err }" v-model.trim="name.val" name="name" type="text" placeholder="Name" />
+        <input @keypress="preventInputInvalid($event)" @focus="cleanError" :class="{ error: !!name.err }" v-model.trim="name.val" name="name" type="text" :placeholder="globalObject.contactNamePlaceholder" />
         <label v-if="!!name.err" for="name">{{ name.err }}</label>
-        <input @focus="cleanError" :class="{ error: !!email.err }" v-model.trim="email.val" name="email" placeholder="Email" />
+        <input @focus="cleanError" :class="{ error: !!email.err }" v-model.trim="email.val" name="email" :placeholder="globalObject.contactEmailPlaceholder" />
         <label v-if="!!email.err" for="email">{{ email.err }}</label>
-        <textarea @keypress="preventInputInvalid($event)" @focus="cleanError" :class="{ error: !!message.err }" v-model.trim="message.val" rows="6" placeholder="What's on your mind?" name="message"></textarea>
+        <textarea @keypress="preventInputInvalid($event)" @focus="cleanError" :class="{ error: !!message.err }" v-model.trim="message.val" rows="6" :placeholder="globalObject.contactMessagePlaceholder" name="message"></textarea>
         <label v-if="!!message.err" for="message">{{ message.err }}</label>
-        <main-button type="submit" color="black">Send</main-button>
+        <main-button type="submit" color="black">{{ globalObject.contactButton }}</main-button>
     </form>
     <div v-else class="response-container">
         <h1>{{ postResponse }} </h1>
@@ -90,6 +90,11 @@ export default {
             if (!inputIsValide) {
                 e.preventDefault();
             }
+        }
+    },
+    computed: {
+        globalObject() {
+            return this.$store.getters.getlanguageObject
         }
     },
 };

@@ -1,0 +1,31 @@
+<template>
+    <div v-if="logoPath" class="language-changer-container">
+      <img alt="Language flag" width="30" :src="require(`@/assets/icons/${logoPath}`)" @click="changeLanguage" />
+    </div>
+  </template>
+  
+  <script>
+  export default {
+    methods: {
+      async changeLanguage() {
+        await this.$store.dispatch('changeLanguage')
+        window.location.reload()
+      }
+    },
+    computed: {
+      logoPath() {
+        const selectedLanguage = this.$store.getters.getSelectedLanguage
+        if (selectedLanguage === 'en') {
+            return 'brazil.svg'
+        } else {
+          return 'united-states-of-america.svg'
+        }
+      }
+    }
+  }
+  </script>
+  
+  <style lang="scss">
+  @import 'LanguageButton.scss';
+  </style>
+  

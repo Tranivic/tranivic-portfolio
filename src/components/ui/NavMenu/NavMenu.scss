@@ -1,6 +1,7 @@
 .nav-menu {
   position: relative;
   z-index: 999;
+  margin-left: $margin-base;
   .nav-menu-btn {
     border: none;
     background-color: $black-secondary;

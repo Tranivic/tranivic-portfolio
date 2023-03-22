@@ -1,5 +1,5 @@
 <template>
-<div class="animated-title-container">
+<div  class="animated-title-container">
     <div class="first-line">
         <span v-for="(word, index) in firstSequence" :key="index" class="animated-item hidden">{{ word }}</span>
     </div>
@@ -26,17 +26,12 @@ export default {
         return {
             firstSequence: [],
             secondSequece: [],
+            showComponent: true,
         };
     },
-    async created() {
+    created() {
         this.populateArrays();
-        if (window.screen.width < 992) {
-            this.animateWords()
-            return
-        }
-        window.addEventListener('mousemove', this.animateWords);
-        window.addEventListener('focus', this.animateWords);
-        window.addEventListener('scroll', this.animateWords);
+        this.animateWords();
     },
     methods: {
         populateArrays() {
@@ -59,19 +54,12 @@ export default {
                         clearInterval(interval);
                     }
                 }, 100);
-            }).then(
-                this.removeEventListeners
-            );
+            });
         },
-        removeEventListeners() {
-            window.removeEventListener('mousemove', this.animateWords);
-            window.removeEventListener('focus', this.animateWords);
-            window.removeEventListener('scroll', this.animateWords);
-        }
     },
 };
 </script>
 
 <style lang="scss" scoped>
-@import 'AnimatedTitle.scss'
+@import 'AnimatedTitle.scss';
 </style>

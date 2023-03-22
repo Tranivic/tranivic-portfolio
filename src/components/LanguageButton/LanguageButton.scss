@@ -1,0 +1,16 @@
+.language-changer-container{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    img{
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+        filter: grayscale(100%);
+        transform: scale(1);
+        &:hover{
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+    }
+}

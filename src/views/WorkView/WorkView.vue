@@ -1,6 +1,6 @@
 <template>
 <section class="work-page">
-    <animated-title firstLine="My Works"></animated-title>
+    <animated-title v-if="globalObject.myWorksTitle" :firstLine="globalObject.myWorksTitle"></animated-title>
     <ul class="work-list">
         <work-card v-for="work in allWorks" :key="work.name" :work="work"></work-card>
     </ul>
@@ -15,6 +15,9 @@ export default {
     computed: {
         allWorks() {
             return this.$store.getters.myWorks
+        },
+        globalObject(){
+            return this.$store.getters.getlanguageObject
         }
     },
 };

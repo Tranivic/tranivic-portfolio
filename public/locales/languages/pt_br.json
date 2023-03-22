@@ -1,0 +1,32 @@
+{
+    "statusBarMessage": "DISPONÍVEL PARA TRABALHO FREELANCE!",
+    "navMenu": {
+        "titleOpen": "Menu",
+        "titleClose": "Fechar",
+        "homeButton": "Inicio",
+        "aboutButton": "Sobre",
+        "contactButton": "Contato",
+        "workButton": "Projetos"
+    },
+    "titleFirstLine": "Olá, me chamo Victor Trani.",
+    "titleSecondLine": "Eu projeto, escrevo e desenvolvo aplicações web.",
+    "description": "Eu sou um Desenvolvedor Web com foco em desenvolvimento frontend gosto de transformar desafios em interfaces simples através de código, criando oportunidades.",
+    "hireMeButton": "Me Contrate!",
+    "selectedWork": "Principais Projetos",
+    "selectedWorkButton": "Veja Mais",
+    "thingsIDoTitle": "Sobre mim",
+    "thingsIDoDescription": "Codificação, estratégia, gestão e desenvolvimento são minhas especialidades, e tenho trabalhado nisso há quase 2 anos aprimorando minhas habilidades. Em todos os meus projetos, percebo que fluxos de trabalho eficientes, boas habilidades de comunicação e uma dose de autodisciplina são fundamentais",
+    "skillsTitle": "Habilidades",
+    "letsTalkTitle": "Vamos falar sobre seu projeto!",
+    "letsTalkDescription": "Algo interessante em sua mente? Marque uma call e vamos conversar!",
+    "letsTalkCallButton": "Agende uma chamada",
+    "letsTalkEmailButton": "Me envie um e-mail",
+    "aboutTitle":"Saudações visitante, sinta-se em casa!",
+    "aboutDescription": "Meu nome é Victor Trani, sou um desenvolvedor web frontend que está ansioso para trabalhar remotamente ao redor do mundo. Minha especialidade inclui gerar ideias de website e codificar interfaces frontend para criar experiências online satisfatórias para clientes e usuários. Sou profundamente apaixonado por desenvolver aplicações web que tragam valor para a vida das pessoas.",
+    "contactTitle":"Contato",
+    "contactNamePlaceholder":"Nome",
+    "contactEmailPlaceholder":"E-mail",
+    "contactMessagePlaceholder":"O que tem em mente?",
+    "myWorksTitle": "Meus Projetos",
+    "contactButton":"Enviar"
+}
