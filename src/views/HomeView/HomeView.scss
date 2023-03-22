@@ -99,6 +99,9 @@
     font-size: $font-size-base * 1.2 !important;
   }
   .home-page {
+    .sub-title{
+      width: 100%;
+    }
     .selected-work-container {
       width: 100%;
       .work-list {
