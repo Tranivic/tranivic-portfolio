@@ -1,5 +1,5 @@
 <template>
-<div  class="animated-title-container">
+<div class="animated-title-container">
     <div class="first-line">
         <span v-for="(word, index) in firstSequence" :key="index" class="animated-item hidden">{{ word }}</span>
     </div>
@@ -15,7 +15,6 @@ export default {
         firstLine: {
             type: String,
             required: true,
-            default: 'This is the first Line',
         },
         secondLine: {
             type: String,

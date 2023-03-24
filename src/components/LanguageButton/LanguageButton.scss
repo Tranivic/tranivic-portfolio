@@ -4,13 +4,16 @@
     width: 100%;
     height: 100%;
     img{
-        transition: all .3s ease-in-out;
+        transition: all .2s ease-in-out;
         cursor: pointer;
         filter: grayscale(100%);
         transform: scale(1);
         &:hover{
             filter: grayscale(0%);
             transform: scale(1.1);
+        }&:active{
+            filter: grayscale(0%);
+            transform: scale(.9);
         }
     }
 }

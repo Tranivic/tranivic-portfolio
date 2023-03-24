@@ -7,7 +7,7 @@
     "technologies": ["Discord.js", "Node", "Javasctipt", "OpenAI"],
     "link": "https://github.com/Tranivic/discord-B10-bot",
     "underConstruction": true,
-    "image": "https://i.imgur.com/Ny8ujwo.png"
+    "image": "../locales/images/Ny8ujwo.png"
   },
   {
     "id": 1,
@@ -17,7 +17,7 @@
     "technologies": ["Vuejs", "CriptoAPI", "Tailwind", "Axios"],
     "link": "https://cripto-project.vercel.app/",
     "underConstruction": true,
-    "image": "https://i.imgur.com/HvN8VEM.png"
+    "image": "../locales/images/HvN8VEM.png"
   },
   {
     "id": 2,
@@ -27,7 +27,7 @@
     "technologies": ["Html", "Css", "Js", "Sass"],
     "link": "https://bumblebot.netlify.app/",
     "underConstruction": false,
-    "image": "https://i.imgur.com/8kuoP9l.png"
+    "image": "../locales/images/8kuoP9l.png"
   },
   {
     "id": 3,
@@ -37,7 +37,7 @@
     "technologies": ["Vuejs", "Firebase", "Axios"],
     "link": "https://auth-app-vue.netlify.app/",
     "underConstruction": false,
-    "image": "https://i.imgur.com/MSv4CvK.png"
+    "image": "../locales/images/MSv4CvK.png"
   },
   {
     "id": 4,
@@ -47,7 +47,7 @@
     "technologies": ["Html", "Css", "Js"],
     "link": "https://document-selfie-inverter.netlify.app/",
     "underConstruction": false,
-    "image": "https://i.imgur.com/WV7PSdQ.png"
+    "image": "../locales/images/WV7PSdQ.png"
   },
   {
     "id": 5,
@@ -57,7 +57,7 @@
     "technologies": ["Jquery", "Bootstrap", "Js"],
     "link": "https://tranivic.github.io/fakestore-website/",
     "underConstruction": false,
-    "image": "https://i.imgur.com/zZEZ0Un.png"
+    "image": "../locales/images/zZEZ0Un.png"
   },
   {
     "id": 6,
@@ -67,7 +67,7 @@
     "technologies": ["Vue", "Router", "Vuex", "Sass", "Axios"],
     "link": "https://github.com/Tranivic/entregue.me-frontend",
     "underConstruction": true,
-    "image": "https://i.imgur.com/h8EVXph.png"
+    "image": "../locales/images/h8EVXph.png"
   },
   {
     "id": 7,
@@ -77,6 +77,6 @@
     "technologies": ["Html", "Sass", "Css", "Js"],
     "link": "https://tranivic.github.io/to-do-list/",
     "underConstruction": false,
-    "image": "https://i.imgur.com/Wb0OXlR.png"
+    "image": "../locales/images/Wb0OXlR.png"
   }
 ]
