@@ -51,12 +51,6 @@ export default {
             return this.$store.getters.getlanguageObject.navMenu;
         },
     },
-    watch: {
-        globalNavMenu(newValue, oldValue) {
-            console.log(oldValue);
-            console.log(newValue);
-        },
-    },
 };
 </script>
 

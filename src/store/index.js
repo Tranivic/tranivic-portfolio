@@ -51,7 +51,7 @@ const store = createStore({
       });
     },
 
-    async postMessage(state, payLoad) {
+    async postMessage({state}, payLoad) {
       try {
         const response = await fetch(
           'https://personal-portifoil-default-rtdb.firebaseio.com/messages.json',
