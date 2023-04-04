@@ -1,17 +1,30 @@
 <template>
-<app-header></app-header>
-<router-view />
-<app-footer></app-footer>
+<div v-if="isLoaded" class="page-loaded">
+    <app-header></app-header>
+    <router-view />
+    <app-footer></app-footer>
+</div>
+<div v-else class="page-loading"></div>
 </template>
 
 <script>
 import AppHeader from '@/layouts/AppHeader/AppHeader.vue';
 import AppFooter from '@/layouts/AppFooter/AppFooter.vue';
 export default {
-    async beforeMount() {
+    async created() {
         await this.$store.dispatch('integrateCalApi');
         await this.$store.dispatch('fetchProjects');
         await this.$store.dispatch('fetchLanguage');
+    },
+    mounted() {
+        addEventListener('load', (_) => {
+            this.isLoaded = true;
+        });
+    },
+    data() {
+        return {
+            isLoaded: false,
+        };
     },
     components: {
         AppHeader,
