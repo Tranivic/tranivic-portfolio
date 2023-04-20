@@ -1,14 +1,13 @@
 <template>
 <div class="animated-title-container">
     <div class="first-line">
-        <span v-for="(word, index) in firstSequence" :key="index" class="animated-item hidden">{{ word }}</span>
+        <span v-for="(word, index) in firstSequence" :key="index" :class="{'animated-item': true,hidden: !wordVisible[index],show: wordVisible[index],}">{{ word }}</span>
     </div>
     <div v-if="secondLine !== ''" class="second-line">
-        <span v-for="(word, index) in secondSequece" :key="index" class="animated-item hidden">{{ word }}</span>
+        <span v-for="(word, index) in secondSequence" :key="index" :class="{'animated-item': true,hidden: !wordVisible[index],show: wordVisible[index],}">{{ word }}</span>
     </div>
 </div>
 </template>
-
 <script>
 export default {
     props: {
@@ -19,41 +18,40 @@ export default {
         secondLine: {
             type: String,
             required: false,
+            default: '',
         },
     },
     data() {
         return {
             firstSequence: [],
-            secondSequece: [],
-            showComponent: true,
+            secondSequence: [],
+            wordVisible: [],
         };
     },
-    created() {
+    computed: {
+        allWords() {
+            return this.firstSequence.concat(this.secondSequence);
+        },
+    },
+    mounted() {
         this.populateArrays();
         this.animateWords();
     },
     methods: {
         populateArrays() {
-            if (this.firstLine) {
-                this.firstSequence = this.firstLine.split(' ');
-            }
-            if (this.secondLine) {
-                this.secondSequece = this.secondLine.split(' ');
-            }
+            this.firstSequence = this.firstLine.split(' ');
+            this.secondSequence = this.secondLine.split(' ');
+            this.wordVisible = new Array(this.allWords.length).fill(false);
         },
         animateWords() {
-            this.$nextTick(() => {
-                const items = document.querySelectorAll('.animated-item');
-                let index = 0;
-                const interval = setInterval(() => {
-                    items[index].classList.remove('hidden');
-                    items[index].classList.add('show');
-                    index++;
-                    if (index === items.length) {
-                        clearInterval(interval);
-                    }
-                }, 100);
-            });
+            let index = 0;
+            const interval = setInterval(() => {
+                this.wordVisible[index] = true;
+                index++;
+                if (index === this.allWords.length) {
+                    clearInterval(interval);
+                }
+            }, 100);
         },
     },
 };
