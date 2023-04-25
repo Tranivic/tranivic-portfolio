@@ -15,6 +15,7 @@ export default {
         await this.$store.dispatch('integrateCalApi');
         await this.$store.dispatch('fetchProjects');
         await this.$store.dispatch('fetchLanguage');
+        await this.$store.dispatch('setVisitor');
     },
     mounted() {
         addEventListener('load', (_) => {

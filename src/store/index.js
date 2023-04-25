@@ -51,7 +51,7 @@ const store = createStore({
       });
     },
 
-    async postMessage({state}, payLoad) {
+    async postMessage({ state }, payLoad) {
       try {
         const response = await fetch(
           'https://personal-portifoil-default-rtdb.firebaseio.com/messages.json',
@@ -63,7 +63,9 @@ const store = createStore({
         if (!response.ok) {
           throw new Error('Failed to send message, sorry. Try again later!');
         } else {
-          return state.selectedLanguage === 'en'? 'Thanks for reaching out!': 'Obrigado por entrar em contato!';
+          return state.selectedLanguage === 'en'
+            ? 'Thanks for reaching out!'
+            : 'Obrigado por entrar em contato!';
         }
       } catch (err) {
         return err.message;
@@ -110,6 +112,37 @@ const store = createStore({
 
       commit('setSelectedLanguage', changedLanguage);
       dispatch('fetchLanguage');
+    },
+
+    setVisitor({ dispatch }) {
+      if (!localStorage.getItem('visitorIdentifier')) {
+        const newVisitor = Math.floor(Math.random() * 10000);
+        localStorage.setItem('visitCount', 1);
+        localStorage.setItem('visitorIdentifier', newVisitor);
+        const obj = { visitorId: newVisitor, visitCount: 1 };
+        dispatch('postVisitor', obj);
+      } else {
+        const visitor = localStorage.getItem('visitorIdentifier');
+        let timesVisited = parseInt(localStorage.getItem('visitCount'));
+        timesVisited++;
+        localStorage.setItem('visitCount', timesVisited.toString());
+        const obj = { visitorId: visitor, visitCount: timesVisited };
+        dispatch('postVisitor', obj);
+      }
+    },
+
+    async postVisitor({}, visitorObj) {
+      try {
+        const response = await axios.put(
+          `https://personal-portifoil-default-rtdb.firebaseio.com/visitors/${visitorObj.visitorId}.json`,
+          {
+            timesVisited: visitorObj.visitCount,
+          }
+        );
+        console.log(response);
+      } catch (err) {
+        console.error(err);
+      }
     },
   },
 });
