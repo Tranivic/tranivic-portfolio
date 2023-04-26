@@ -16,6 +16,7 @@ export default {
         await this.$store.dispatch('fetchProjects');
         await this.$store.dispatch('fetchLanguage');
         await this.$store.dispatch('setVisitor');
+        await this.$store.dispatch('printEasterEgg');
     },
     mounted() {
         addEventListener('load', (_) => {

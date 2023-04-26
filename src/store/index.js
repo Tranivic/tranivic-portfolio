@@ -1,6 +1,8 @@
 import { createStore } from 'vuex';
 import { getCalApi } from '@calcom/embed-react';
 import axios from 'axios';
+import figlet from 'figlet';
+import standard from 'figlet/importable-fonts/Standard.js';
 
 const store = createStore({
   state: {
@@ -126,23 +128,46 @@ const store = createStore({
         let timesVisited = parseInt(localStorage.getItem('visitCount'));
         timesVisited++;
         localStorage.setItem('visitCount', timesVisited.toString());
-        const obj = { visitorId: visitor, visitCount: timesVisited };
+
+        const obj = {
+          visitorId: visitor,
+          visitCount: timesVisited,
+        };
+
+        const currentDate = new Date();
+        if (currentDate) {
+          obj.lastDateVisiting = currentDate.toString();
+        }
         dispatch('postVisitor', obj);
       }
     },
 
     async postVisitor({}, visitorObj) {
       try {
-        const response = await axios.put(
+        await axios.put(
           `https://personal-portifoil-default-rtdb.firebaseio.com/visitors/${visitorObj.visitorId}.json`,
           {
             timesVisited: visitorObj.visitCount,
+            lastVisit: visitorObj.lastDateVisiting,
           }
         );
-        console.log(response);
       } catch (err) {
         console.error(err);
       }
+    },
+
+    printEasterEgg() {
+      const easterEggMessage = 'Victor Trani - 2023';
+      figlet.parseFont('standard', standard);
+      figlet.text(
+        easterEggMessage,
+        {
+          font: 'standard',
+        },
+        function (_, data) {
+          console.log(data);
+        }
+      );
     },
   },
 });
