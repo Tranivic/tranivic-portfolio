@@ -49,7 +49,6 @@ router.beforeEach((to, from, next) => {
   if (localStorage.getItem('selectedLanguage')) {
     const currentSelectedLanguage = localStorage.getItem('selectedLanguage');
     store.commit('setSelectedLanguage', currentSelectedLanguage);
-    console.log(store.state.selectedLanguage)
   }
   if (to.path === '/' && store.state.selectedLanguage === 'br') {
     next('/pt');
