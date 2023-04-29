@@ -22,8 +22,8 @@ export default {
     watch: {
         userIsTyping(newValue, _) {
             if (newValue) {
-                window.onbeforeunload = function () {
-                    return 'Are you sure that you want to leave this page?';
+                window.onbeforeunload = function (e) {
+                    return e;
                 };
             } else {
                 window.onbeforeunload = null;

@@ -117,27 +117,27 @@ const store = createStore({
     },
 
     setVisitor({ dispatch }) {
+      const currentDate = new Date().toString();
       if (!localStorage.getItem('visitorIdentifier')) {
         const newVisitor = Math.floor(Math.random() * 10000);
         localStorage.setItem('visitCount', 1);
         localStorage.setItem('visitorIdentifier', newVisitor);
-        const obj = { visitorId: newVisitor, visitCount: 1 };
+        const obj = {
+          visitorId: newVisitor,
+          visitCount: 1,
+          lastDateVisiting: currentDate,
+        };
         dispatch('postVisitor', obj);
       } else {
         const visitor = localStorage.getItem('visitorIdentifier');
         let timesVisited = parseInt(localStorage.getItem('visitCount'));
         timesVisited++;
         localStorage.setItem('visitCount', timesVisited.toString());
-
         const obj = {
           visitorId: visitor,
           visitCount: timesVisited,
+          lastDateVisiting: currentDate,
         };
-
-        const currentDate = new Date();
-        if (currentDate) {
-          obj.lastDateVisiting = currentDate.toString();
-        }
         dispatch('postVisitor', obj);
       }
     },
