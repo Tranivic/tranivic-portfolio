@@ -7,16 +7,29 @@
         <label v-if="!!email.err" for="email">{{ email.err }}</label>
         <textarea @keypress="preventInputInvalid($event)" @focus="cleanError" :class="{ error: !!message.err }" v-model.trim="message.val" rows="6" :placeholder="globalObject.contactMessagePlaceholder" name="message"></textarea>
         <label v-if="!!message.err" for="message">{{ message.err }}</label>
-        <main-button type="submit" color="black">{{ globalObject.contactButton }}</main-button>
+        <main-button type="submit" color="black">{{
+        globalObject.contactButton
+      }}</main-button>
     </form>
     <div v-else class="response-container">
-        <h1>{{ postResponse }} </h1>
+        <h1>{{ postResponse }}</h1>
     </div>
 </transition>
 </template>
 
 <script>
 export default {
+    watch: {
+        userIsTyping(newValue, _) {
+            if (newValue) {
+                window.onbeforeunload = function () {
+                    return 'Are you sure that you want to leave this page?';
+                };
+            } else {
+                window.onbeforeunload = null;
+            }
+        }
+    },
     data() {
         return {
             formIsValid: false,
@@ -48,9 +61,9 @@ export default {
                     'postMessage',
                     newMessage
                 );
-                this.name.val = ''
-                this.email.val = ''
-                this.message.val = ''
+                this.name.val = '';
+                this.email.val = '';
+                this.message.val = '';
             }
         },
         checkValidity() {
@@ -84,18 +97,22 @@ export default {
         cleanError(e) {
             this.$data[e.target.name].err = '';
         },
+
         preventInputInvalid(e) {
             var regex = /^[a-zA-Z ]*$/;
-            const inputIsValide = regex.test(e.key)
+            const inputIsValide = regex.test(e.key);
             if (!inputIsValide) {
                 e.preventDefault();
             }
-        }
+        },
     },
     computed: {
         globalObject() {
-            return this.$store.getters.getlanguageObject
-        }
+            return this.$store.getters.getlanguageObject;
+        },
+        userIsTyping() {
+            return (this.name.val.length > 10 || this.email.val.length > 10 || this.message.val.length > 10);
+        },
     },
 };
 </script>

@@ -10,16 +10,16 @@ import ContactForm from '@/components/ui/ContactForm/ContactForm.vue';
 
 export default {
     components: {
-        ContactForm
+        ContactForm,
     },
     computed: {
         globalObject() {
-            return this.$store.getters.getlanguageObject
-        }
+            return this.$store.getters.getlanguageObject;
+        },
     },
-}
+};
 </script>
 
 <style lang="scss" scoped>
-@import 'ContactView.scss'
+@import 'ContactView.scss';
 </style>

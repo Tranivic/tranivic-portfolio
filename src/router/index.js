@@ -26,6 +26,9 @@ const router = createRouter({
       path: '/contact',
       name: 'Contact',
       component: ContactView,
+      beforeRouteLeave(to, from, next) {
+        console.log('tasd');
+      },
     },
     {
       path: '/work',
@@ -46,6 +49,7 @@ const router = createRouter({
   },
 });
 router.beforeEach((to, from, next) => {
+  window.onbeforeunload = null;
   if (localStorage.getItem('selectedLanguage')) {
     const currentSelectedLanguage = localStorage.getItem('selectedLanguage');
     store.commit('setSelectedLanguage', currentSelectedLanguage);
