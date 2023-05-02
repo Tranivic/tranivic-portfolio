@@ -1,13 +1,14 @@
 {
     "statusBarMessage": "AVAILABLE FOR FREELANCE WORK!",
     "navMenu": {
-    "titleOpen": "Menu",
-    "titleClose": "Close",
-    "homeButton": "Home",
-    "aboutButton": "About",
-    "contactButton": "Contact",
-    "workButton": "Projects"
+        "titleOpen": "Menu",
+        "titleClose": "Close",
+        "homeButton": "Home",
+        "aboutButton": "About",
+        "contactButton": "Contact",
+        "workButton": "Projects"
     },
+    "toolkitLanguageSelect": "Tradução Português",
     "titleFirstLine": "Hi, I’m Victor Trani.",
     "titleSecondLine": "I project, code and grow internet software.",
     "description": "I’m a Software Engineer focused on frontend developing who enjoys turning problems and opportunities into simple interfaces through code.",
@@ -21,12 +22,12 @@
     "letsTalkDescription": "Something interesting on your mind? Schedule a call and let's chat!",
     "letsTalkCallButton": "Schedule a Call",
     "letsTalkEmailButton": "Send me an Email",
-    "aboutTitle":"Hi, hello and welcome stranger!",
+    "aboutTitle": "Hi, hello and welcome stranger!",
     "aboutDescription": "I'm Victor Trani, a frontend web developer who's eager to work remotely around the world. My expertise includes generating website ideas and code frontend interfaces to craft satisfying online experiences for customers and users. I'm deeply passionate about developing web applications that bring value to people's lives.",
-    "contactTitle":"Contact",
-    "contactNamePlaceholder":"Name",
-    "contactEmailPlaceholder":"E-mail",
-    "contactMessagePlaceholder":"What's on your mind?",
+    "contactTitle": "Contact",
+    "contactNamePlaceholder": "Name",
+    "contactEmailPlaceholder": "E-mail",
+    "contactMessagePlaceholder": "What's on your mind?",
     "myWorksTitle": "My Works",
-    "contactButton":"Send"
-    }
+    "contactButton": "Send"
+}

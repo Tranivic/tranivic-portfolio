@@ -1,7 +1,6 @@
 .nav-menu {
   position: relative;
   z-index: 999;
-  margin-left: $margin-base;
   .nav-menu-btn {
     border: none;
     background-color: $black-secondary;
@@ -36,7 +35,7 @@
   }
   .backgroud-linear-gradient {
     position: absolute;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     top: 6rem;
     right: 0.1rem;
     &::before {

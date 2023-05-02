@@ -8,6 +8,7 @@
         "contactButton": "Contato",
         "workButton": "Projetos"
     },
+    "toolkitLanguageSelect": "English Translation",
     "titleFirstLine": "Olá, meu nome é Victor Trani.",
     "titleSecondLine": "Eu projeto, escrevo e desenvolvo aplicações web.",
     "description": "Sou um Desenvolvedor Web com foco em desenvolvimento frontend. Gosto de transformar problemas em interfaces simples através de código.",
@@ -21,12 +22,12 @@
     "letsTalkDescription": "Algo interessante em sua mente? Marque uma call e vamos conversar!",
     "letsTalkCallButton": "Agende uma chamada",
     "letsTalkEmailButton": "Me envie um e-mail",
-    "aboutTitle":"Saudações, mais um pouco sobre mim.",
+    "aboutTitle": "Saudações, mais um pouco sobre mim.",
     "aboutDescription": "Meu nome é Victor Trani, sou um desenvolvedor web frontend que está ansioso para trabalhar remotamente ao redor do mundo ou presencialmente no Rio de Janeiro. Minha especialidade inclui gerar ideias de website e codificar interfaces frontend para criar experiências online satisfatórias para clientes e usuários. Sou profundamente apaixonado por desenvolver aplicações web que tragam valor para a vida das pessoas.",
-    "contactTitle":"Contato",
-    "contactNamePlaceholder":"Nome",
-    "contactEmailPlaceholder":"E-mail",
-    "contactMessagePlaceholder":"O que tem em mente?",
+    "contactTitle": "Contato",
+    "contactNamePlaceholder": "Nome",
+    "contactEmailPlaceholder": "E-mail",
+    "contactMessagePlaceholder": "O que tem em mente?",
     "myWorksTitle": "Meus Projetos",
-    "contactButton":"Enviar"
+    "contactButton": "Enviar"
 }
