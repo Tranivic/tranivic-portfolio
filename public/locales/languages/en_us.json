@@ -8,6 +8,11 @@
         "contactButton": "Contact",
         "workButton": "Projects"
     },
+    "downloadMenu": {
+        "initialState": "Download CV",
+        "middleState": "Downloading",
+        "finalState": "Open 📁"
+    },
     "toolkitLanguageSelect": "Tradução Português",
     "titleFirstLine": "Hi, I’m Victor Trani.",
     "titleSecondLine": "I project, code and grow internet software.",

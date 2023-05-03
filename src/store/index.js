@@ -6,6 +6,7 @@ import standard from 'figlet/importable-fonts/Standard.js';
 
 const store = createStore({
   state: {
+    cvDownloadTimes: 0,
     calApi: null,
     works: [],
     selectedLanguage: 'en',
@@ -29,6 +30,9 @@ const store = createStore({
     getSelectedLanguage(state) {
       return state.selectedLanguage;
     },
+    getDownloadTimes(state) {
+      return state.cvDownloadTimes;
+    },
   },
   mutations: {
     setWorks(state, payload) {
@@ -41,6 +45,9 @@ const store = createStore({
     },
     setSelectedLanguage(state, payLoad) {
       state.selectedLanguage = payLoad;
+    },
+    increeseDownloadTimes(state) {
+      state.cvDownloadTimes++;
     },
   },
   actions: {

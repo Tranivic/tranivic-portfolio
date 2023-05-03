@@ -8,6 +8,11 @@
         "contactButton": "Contato",
         "workButton": "Projetos"
     },
+    "downloadMenu": {
+        "initialState": "Baixar CV",
+        "middleState": "Baixando",
+        "finalState": "Abrir 📁"
+    },
     "toolkitLanguageSelect": "English Translation",
     "titleFirstLine": "Olá, meu nome é Victor Trani.",
     "titleSecondLine": "Eu projeto, escrevo e desenvolvo aplicações web.",
