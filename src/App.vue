@@ -4,7 +4,8 @@
     <router-view />
     <app-footer></app-footer>
 </div>
-<div v-else class="page-loading"></div>
+<div v-else class="page-loading">
+</div>
 </template>
 
 <script>
@@ -17,11 +18,7 @@ export default {
         await this.$store.dispatch('fetchLanguage');
         await this.$store.dispatch('setVisitor');
         await this.$store.dispatch('printEasterEgg');
-    },
-    mounted() {
-        addEventListener('load', (_) => {
-            this.isLoaded = true;
-        });
+        this.isLoaded = true;
     },
     data() {
         return {
@@ -47,6 +44,13 @@ body {
 
     #app {
         width: 100%;
+    }
+
+    // Page loading entering related
+    .page-loading {
+        background-color: $black-main;
+        widows: 100vw;
+        height: 100vh;
     }
 }
 </style>
