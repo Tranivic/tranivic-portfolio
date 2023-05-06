@@ -2,12 +2,11 @@
 <div v-if="!isTouchScreen" class="ball" ref="ball"></div>
 </template>
 
-  
 <script>
 import {
-    throttle
-} from 'lodash';
-
+    gsap,
+    Bounce
+} from 'gsap';
 export default {
     data() {
         return {
@@ -18,14 +17,15 @@ export default {
             isMoving: false,
             initialScrollPosition: null,
             isTouchScreen: false,
+            animatingOut: false,
         };
     },
 
     mounted() {
         this.isTouchScreen = window.matchMedia('(pointer: coarse)').matches;
         if (!this.isTouchScreen) {
-            window.addEventListener('scroll', throttle(this.onScroll, 150));
-            window.addEventListener('mousemove', throttle(this.onMouseMove, 20));
+            window.addEventListener('scroll', this.onScroll);
+            window.addEventListener('mousemove', this.onMouseMove);
             this.initialScrollPosition = window.scrollY;
             this.updateBallPosition();
         }
@@ -38,10 +38,12 @@ export default {
 
     methods: {
         onMouseMove(event) {
-            this.ballPosition.x = event.pageX - 15;
-            this.ballPosition.y = event.pageY - 15;
+            this.ballPosition.x = event.pageX - 9;
+            this.ballPosition.y = event.pageY - 9;
             this.updateBallPosition();
-            const isInteraction = event.target.classList.contains(this.interactionClass);
+            const isInteraction = event.target.classList.contains(
+                this.interactionClass
+            );
             this.setInteraction(isInteraction);
         },
 
@@ -65,7 +67,11 @@ export default {
             const ball = this.$refs.ball;
 
             if (x !== null && y !== null) {
-                ball.style.transform = `translate(${x}px, ${y}px)`;
+                gsap.to(ball, {
+                    x: x,
+                    y: y,
+                    duration: 0.1,
+                });
 
                 if (!this.isMoving) {
                     requestAnimationFrame(this.updateBallPosition);
@@ -77,12 +83,26 @@ export default {
 
         setInteraction(isInteraction) {
             const ball = this.$refs.ball;
-            const uperScaleClass = `uper-scale`;
-
             if (isInteraction) {
-                ball.classList.add(uperScaleClass);
+                gsap.to(
+                    ball, {
+                        scale: 2.2,
+                        duration: 0.5,
+                    },
+                );
             } else {
-                ball.classList.remove(uperScaleClass);
+                if (this.animatingOut == false) {
+                    this.animatingOut = true
+                    gsap.to(ball, {
+                        scale: 1,
+                        delay: 0,
+                        duration: 0.5,
+                        ease: Bounce.easeOut,
+                    });
+                    setTimeout(() => {
+                        this.animatingOut = false
+                    }, 1000);
+                }
             }
         },
     },
@@ -95,7 +115,18 @@ export default {
 };
 </script>
 
-  
 <style lang="scss" scoped>
-@import './CustomCursor.scss'
+.ball {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: $black-main;
+    border: 1px solid $white-main;
+    opacity: (0.5);
+    pointer-events: none;
+    z-index: 1000;
+}
 </style>
