@@ -1,16 +1,21 @@
 <template>
 <div v-if="isLoaded">
+    <!-- Custom cursor related -->
+    <custom-cursor></custom-cursor>
+    <!--  -->
+
     <app-header></app-header>
     <router-view />
     <app-footer></app-footer>
 </div>
-<div v-else class="page-loading">
-</div>
+<div v-else class="page-loading"></div>
 </template>
 
 <script>
 import AppHeader from '@/layouts/AppHeader/AppHeader.vue';
 import AppFooter from '@/layouts/AppFooter/AppFooter.vue';
+import CustomCursor from './components/ui/CustomCursor/CustomCursor.vue';
+
 export default {
     async created() {
         await this.$store.dispatch('integrateCalApi');
@@ -20,6 +25,7 @@ export default {
         await this.$store.dispatch('printEasterEgg');
         this.isLoaded = true;
     },
+
     data() {
         return {
             isLoaded: false,
@@ -28,7 +34,9 @@ export default {
     components: {
         AppHeader,
         AppFooter,
+        CustomCursor
     },
+
 };
 </script>
 
@@ -44,12 +52,18 @@ body {
 
     #app {
         width: 100%;
+        cursor: none;
+    }
+
+    // "Hire me" modal
+    .cal-embed {
+        z-index: 2000;
     }
 
     // Page loading entering related
     .page-loading {
-        background-color: $black-main;
-        widows: 100vw;
+        background-color: $white-main;
+        width: 100vw;
         height: 100vh;
     }
 }

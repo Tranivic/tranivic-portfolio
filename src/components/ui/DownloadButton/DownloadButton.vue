@@ -1,13 +1,13 @@
 <template>
 <div class="backgroud-linear-gradient">
-    <a ref="button" @click.prevent="setInitialAnimation()" class="button">
-        <ul v-if="(globalNavMenu)">
-            <li>{{ globalNavMenu.initialState }}</li>
-            <li>{{ globalNavMenu.middleState }}</li>
-            <li>{{ globalNavMenu.finalState }}</li>
+    <a ref="button" @click.prevent="setInitialAnimation()" class="interact-cursor button">
+        <ul class="interact-cursor" v-if="(globalNavMenu)">
+            <li class="interact-cursor">{{ globalNavMenu.initialState }}</li>
+            <li class="interact-cursor">{{ globalNavMenu.middleState }}</li>
+            <li class="interact-cursor">{{ globalNavMenu.finalState }}</li>
         </ul>
-        <div>
-            <svg ref="svg" viewBox="0 0 24 24"></svg>
+        <div class="interact-cursor">
+            <svg class="interact-cursor" ref="svg" viewBox="0 0 24 24"></svg>
         </div>
     </a>
 </div>
@@ -73,6 +73,7 @@ export default {
                     }, duration / 2);
                 }
             };
+
             function getPoint(point, i, a, smoothing) {
                 let cp = (current, previous, next, reverse) => {
                         let p = previous || current,
@@ -89,6 +90,7 @@ export default {
                     cpe = cp(point, a[i - 1], a[i + 1], true);
                 return `C ${cps[0]},${cps[1]} ${cpe[0]},${cpe[1]} ${point[0]},${point[1]}`;
             }
+
             function getPath(update, smoothing, pointsNew) {
                 let points = pointsNew ? pointsNew : [
                         [4, 12],

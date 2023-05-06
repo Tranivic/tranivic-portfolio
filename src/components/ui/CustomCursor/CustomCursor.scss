@@ -1,0 +1,19 @@
+.ball {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: $black-main;
+  border: 1px solid $white-main;
+  opacity: (0.5);
+  pointer-events: none;
+  transition: all 0.2s ease-out;
+  z-index: 1000;
+}
+
+.ball.uper-scale {
+  width: 35px;
+  height: 35px;
+}

@@ -1,6 +1,6 @@
 <template>
 <div :data-text="toolKitText" v-if="logoPath" class="language-changer-container">
-    <img alt="Language flag" width="30" :src="require(`@/assets/icons/${logoPath}`)" @click="changeLanguage" />
+    <img class="interact-cursor" alt="Language flag" width="30" :src="require(`@/assets/icons/${logoPath}`)" @click="changeLanguage" />
 </div>
 </template>
 

@@ -8,8 +8,8 @@
     display: flex;
     padding: 0.5rem;
     li {
-      a,button {
-        cursor: pointer;
+      a,
+      button {
         background-color: transparent;
         border: none;
         padding: 0;
@@ -26,7 +26,7 @@
       }
     }
   }
-  .social-media-container{
+  .social-media-container {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -41,7 +41,6 @@
     h1 {
       transition: all 0.3s ease-in-out;
       font-size: 5rem;
-      cursor: pointer;
       &:not(:hover) {
         animation: return-animation 0.2s;
       }

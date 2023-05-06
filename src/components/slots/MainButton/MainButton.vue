@@ -1,8 +1,8 @@
 <template>
-<button v-if="!isLink" class="main-button" :class="color === 'black' ? 'black-btn' : 'white-btn'">
+<button v-if="!isLink" class="interact-cursor main-button" :class="color === 'black' ? 'black-btn' : 'white-btn'">
     <slot></slot>
 </button>
-<router-link v-else  :to="pushTo" class="main-button" :class="color === 'black' ? 'black-btn' : 'white-btn'">
+<router-link v-else  :to="pushTo" class="interact-cursor main-button" :class="color === 'black' ? 'black-btn' : 'white-btn'">
     <slot></slot>
 </router-link>
 </template>
