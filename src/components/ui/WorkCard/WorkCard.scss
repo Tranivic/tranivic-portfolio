@@ -119,6 +119,7 @@
   background-color: darken($white-main, 10%);
   z-index: 44;
   position: relative;
+  overflow: hidden;
   img {
     display: none;
   }
@@ -149,7 +150,7 @@
 }
 // Transition related
 .card-fade-enter-active {
-  transition: all .8s ease;
+  transition: all 1s ease;
 }
 
 .card-fade-enter-from{
