@@ -4,8 +4,7 @@
 
 <script>
 import {
-    gsap,
-    Bounce
+    gsap
 } from 'gsap';
 export default {
     data() {
@@ -18,6 +17,7 @@ export default {
             initialScrollPosition: null,
             isTouchScreen: false,
             animatingOut: false,
+            canInteract: false,
         };
     },
 
@@ -26,29 +26,32 @@ export default {
         if (!this.isTouchScreen) {
             window.addEventListener('scroll', this.onScroll);
             window.addEventListener('mousemove', this.onMouseMove);
-            this.initialScrollPosition = window.scrollY;
             this.updateBallPosition();
         }
     },
-
+    beforeMount() {
+        window.removeEventListener('scroll', this.onScroll);
+        window.removeEventListener('mousemove', this.onMouseMove);
+    },
     beforeUnmount() {
         window.removeEventListener('scroll', this.onScroll);
         window.removeEventListener('mousemove', this.onMouseMove);
     },
-
     methods: {
         onMouseMove(event) {
             this.ballPosition.x = event.pageX - 9;
             this.ballPosition.y = event.pageY - 9;
+            this.canInteract = event.target.classList.contains(this.interactionClass)
+            if (this.canInteract) {
+                this.setInteraction();
+            } else {
+                this.canInteract = false
+                this.setInteraction()
+            }
             this.updateBallPosition();
-            const isInteraction = event.target.classList.contains(
-                this.interactionClass
-            );
-            this.setInteraction(isInteraction);
         },
 
         onScroll() {
-            this.isMoving = true;
             const currentScrollPosition = window.scrollY;
             const scrollDelta = currentScrollPosition - this.initialScrollPosition;
 
@@ -60,50 +63,38 @@ export default {
         },
 
         updateBallPosition() {
-            const {
-                x,
-                y
-            } = this.ballPosition;
             const ball = this.$refs.ball;
-
-            if (x !== null && y !== null) {
-                gsap.to(ball, {
-                    x: x,
-                    y: y,
-                    duration: 0.1,
-                });
-
-                if (!this.isMoving) {
-                    requestAnimationFrame(this.updateBallPosition);
+            if (!this.isMoving) {
+                this.isMoving = true;
+                const {
+                    x,
+                    y
+                } = this.ballPosition;
+                if (x !== null && y !== null) {
+                    requestAnimationFrame(() => {
+                        ball.style.transform = `translate(${x}px, ${y}px)`;
+                        gsap.to(ball, {
+                            x: x,
+                            y: y,
+                            delay: 0,
+                            duration: 0,
+                        })
+                    });
+                    this.isMoving = false;
                 } else {
                     this.isMoving = false;
                 }
             }
         },
 
-        setInteraction(isInteraction) {
+        setInteraction() {
             const ball = this.$refs.ball;
-            if (isInteraction) {
-                gsap.to(
-                    ball, {
-                        scale: 2.2,
-                        duration: 0.5,
-                    },
-                );
-            } else {
-                if (this.animatingOut == false) {
-                    this.animatingOut = true
-                    gsap.to(ball, {
-                        scale: 1,
-                        delay: 0,
-                        duration: 0.5,
-                        ease: Bounce.easeOut,
-                    });
-                    setTimeout(() => {
-                        this.animatingOut = false
-                    }, 1000);
-                }
-            }
+            const scale = this.canInteract ? 2.5 : 1
+            gsap.to(ball, {
+                scale: scale,
+                delay: 0,
+                duration: 0.2,
+            });
         },
     },
 
@@ -116,17 +107,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.ball {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: $black-main;
-    border: 1px solid $white-main;
-    opacity: (0.5);
-    pointer-events: none;
-    z-index: 1000;
-}
+@import './CustomCursor.scss'
 </style>
