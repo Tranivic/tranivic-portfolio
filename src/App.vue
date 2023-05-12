@@ -1,8 +1,8 @@
 <template>
 <div v-if="isLoaded">
-    <!-- Custom cursor related -->
-    <custom-cursor></custom-cursor>
-    <!--  -->
+    <div class="cursor-screen">
+        <custom-cursor></custom-cursor>
+    </div>
 
     <app-header></app-header>
     <router-view />
@@ -34,9 +34,8 @@ export default {
     components: {
         AppHeader,
         AppFooter,
-        CustomCursor
+        CustomCursor,
     },
-
 };
 </script>
 
@@ -49,6 +48,16 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    .cursor-screen {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        pointer-events: none;
+        z-index: 10000;
+    }
 
     #app {
         width: 100%;
