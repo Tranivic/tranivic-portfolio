@@ -63,7 +63,7 @@ export default {
                             x: x,
                             y: y,
                             delay: 0,
-                            duration: .1,
+                            duration: 0,
                         });
                     });
                     this.isMoving = false;
