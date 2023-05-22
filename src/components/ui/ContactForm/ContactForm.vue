@@ -5,7 +5,7 @@
         <label v-if="!!name.err" for="name">{{ name.err }}</label>
         <input class="interact-cursor" @focus="cleanError" :class="{ error: !!email.err }" v-model.trim="email.val" name="email" :placeholder="globalObject.contactEmailPlaceholder" />
         <label v-if="!!email.err" for="email">{{ email.err }}</label>
-        <textarea class="interact-cursor" @keypress="preventInputInvalid($event)" @focus="cleanError" :class="{ error: !!message.err }" v-model.trim="message.val" rows="6" :placeholder="globalObject.contactMessagePlaceholder" name="message"></textarea>
+        <textarea class="interact-cursor" @focus="cleanError" :class="{ error: !!message.err }" v-model.trim="message.val" rows="6" :placeholder="globalObject.contactMessagePlaceholder" name="message"></textarea>
         <label v-if="!!message.err" for="message">{{ message.err }}</label>
         <main-button type="submit" color="black">{{
         globalObject.contactButton
