@@ -20,7 +20,6 @@ export default {
     async created() {
         this.isLoaded = false;
         this.isTouchScreen = window.matchMedia('(pointer: coarse)').matches;
-        console.log(this.isTouchScreen)
         await this.$store.dispatch('integrateCalApi');
         await this.$store.dispatch('fetchProjects');
         await this.$store.dispatch('fetchLanguage');
