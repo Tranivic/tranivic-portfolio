@@ -25,15 +25,38 @@ export default {
         this.isTouchScreen = window.matchMedia('(pointer: coarse)').matches;
         if (!this.isTouchScreen) {
             window.addEventListener('mousemove', this.onMouseMove);
+            window.addEventListener('mousedown', this.onMouseDown)
+            window.addEventListener('mouseup', this.onMouseUp)
             this.updateBallPosition();
         }
     },
 
     beforeMount() {
         window.removeEventListener('mousemove', this.onMouseMove);
+        window.removeEventListener('mousedown', this.onMouseDown);
+        window.removeEventListener('mouseup', this.onMouseUp);
     },
 
     methods: {
+        onMouseUp() {
+            if (!this.canInteract) {
+                const ball = this.$refs.ball;
+                gsap.to(ball, {
+                    scale: 1,
+                    duration: 0.3,
+                })
+            }
+        },
+        onMouseDown() {
+            if (!this.canInteract) {
+                const ball = this.$refs.ball;
+                gsap.to(ball, {
+                    scale: .6,
+                    duration: 0.3,
+                })
+            }
+
+        },
         onMouseMove(event) {
             this.ballPosition.x = event.screenX - 9;
             this.ballPosition.y = event.screenY - 110;
