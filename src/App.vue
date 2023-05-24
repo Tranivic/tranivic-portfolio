@@ -1,5 +1,5 @@
 <template>
-<div v-if="isLoaded">
+<div v-if="isLoaded" :class="this.isTouchScreen? 'loaded-screen-touch':'loaded-screen-click'">
     <div class="cursor-screen">
         <custom-cursor></custom-cursor>
     </div>
@@ -18,6 +18,8 @@ import CustomCursor from './components/ui/CustomCursor/CustomCursor.vue';
 
 export default {
     async created() {
+        this.isTouchScreen = window.matchMedia('(pointer: coarse)').matches;
+        console.log(this.isTouchScreen)
         await this.$store.dispatch('integrateCalApi');
         await this.$store.dispatch('fetchProjects');
         await this.$store.dispatch('fetchLanguage');
@@ -29,6 +31,7 @@ export default {
     data() {
         return {
             isLoaded: false,
+            isTouchScreen: null,
         };
     },
     components: {
@@ -61,7 +64,20 @@ body {
 
     #app {
         width: 100%;
+    }
+
+    .loaded-screen-touch {
+        cursor: auto;
+        button,a{
+            cursor: pointer;
+        }
+    }
+
+    .loaded-screen-click {
         cursor: none;
+        button,a{
+            cursor: none;
+        }
     }
 
     // "Hire me" modal
