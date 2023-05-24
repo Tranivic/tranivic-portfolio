@@ -9,7 +9,7 @@ export default {
     methods: {
         async changeLanguage() {
             await this.$store.dispatch('changeLanguage')
-            window.location.reload()
+            window.open(`${this.$route}`, "_self")
         }
     },
     computed: {
