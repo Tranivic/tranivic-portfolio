@@ -58,8 +58,8 @@ export default {
 
         },
         onMouseMove(event) {
-            this.ballPosition.x = event.screenX - 9;
-            this.ballPosition.y = event.screenY - 110;
+            this.ballPosition.x = event.clientX - 10;
+            this.ballPosition.y = event.clientY - 10;
 
             this.canInteract = event.target.classList.contains(this.interactionClass);
             if (this.canInteract) {
