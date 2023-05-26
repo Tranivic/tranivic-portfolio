@@ -14,6 +14,9 @@
             <button class="interact-cursor" @click="pushToRoute('/work')">{{ globalObject.navMenu.workButton }}</button>
         </li>
         <li class="nav-menu-content-item">
+            <button class="interact-cursor" @click="pushToRoute('/blog')">Blog</button>
+        </li>
+        <li class="nav-menu-content-item">
             <a class="interact-cursor" href="https://www.linkedin.com/in/victor-martins-t/" target="_blank">Linkedin</a>
         </li>
         <li class="nav-menu-content-item">
