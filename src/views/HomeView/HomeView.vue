@@ -31,7 +31,7 @@
         <h1>{{this.globalObject.blogTitle}}</h1>
         <div class="blog-content">
             <ul v-if="this.latestPosts[0] != undefined" class="last-posts">
-                <blog-card :key="post.title" v-for="post in latestPosts" class="interact-cursor" :post="post" typeOfCard="minimalist"></blog-card>
+                <blog-card :key="post.title" v-for="post in latestPosts" :post="post" typeOfCard="minimalist"></blog-card>
             </ul>
             <div class="youtube-video">
                 <iframe src="https://www.youtube.com/embed/Pe_twvBox1s"></iframe>
