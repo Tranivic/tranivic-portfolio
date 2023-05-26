@@ -9,6 +9,7 @@ const store = createStore({
     cvDownloadTimes: 0,
     calApi: null,
     works: [],
+    posts: [],
     selectedLanguage: 'en',
     languageObject: {},
   },
@@ -33,6 +34,19 @@ const store = createStore({
     getDownloadTimes(state) {
       return state.cvDownloadTimes;
     },
+    getDownloadTimes(state) {
+      return state.cvDownloadTimes;
+    },
+    getPosts(state) {
+      return state.posts;
+    },
+    getLatestPosts(state){
+      const latestsPosts = [];
+      for(let i = 0; i <= 1; i++){
+        latestsPosts.push(state.posts[i])
+      }
+      return latestsPosts
+    }
   },
   mutations: {
     setWorks(state, payload) {
@@ -49,6 +63,10 @@ const store = createStore({
     increeseDownloadTimes(state) {
       state.cvDownloadTimes++;
     },
+    setPosts(state, payLoad){
+      state.posts = payLoad
+      console.log(state.posts)
+    }
   },
   actions: {
     async integrateCalApi() {
@@ -175,6 +193,37 @@ const store = createStore({
           console.log(data);
         }
       );
+    },
+
+    async fetchPosts({commit}) {
+      const query = `
+        {
+          user(username: "victortrani") {
+            publication {
+              posts(page: 0) {
+                slug
+                title
+                brief
+                coverImage
+              }
+            }
+          }
+        }
+      `;
+      try {
+        const response = await fetch('https://api.hashnode.com/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ query }),
+        });
+        const data = await response.json();
+        const fetchedPosts = data.data.user.publication.posts;
+        commit('setPosts', fetchedPosts);
+      } catch (err) {
+        console.log(err)
+      }
     },
   },
 });

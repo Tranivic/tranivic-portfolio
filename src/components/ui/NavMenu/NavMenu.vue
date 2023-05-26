@@ -23,6 +23,9 @@
                     <router-link class="interact-cursor" to="/work">{{globalNavMenu.workButton}}</router-link>
                 </li>
                 <li @click="toggleMenu" class="nav-menu-content-item">
+                    <router-link class="interact-cursor" to="/blog">Blog</router-link>
+                </li>
+                <li @click="toggleMenu" class="nav-menu-content-item">
                     <a class="interact-cursor" href="https://www.linkedin.com/in/victor-martins-t/" target="_blank">Linkedin</a>
                 </li>
                 <li @click="toggleMenu" class="nav-menu-content-item">

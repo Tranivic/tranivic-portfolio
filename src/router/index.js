@@ -3,6 +3,7 @@ import HomeView from '../views/HomeView/HomeView.vue';
 import AboutView from '../views/AboutView/AboutView.vue';
 import ContactView from '../views/ContactView/ContactView.vue';
 import WorkView from '../views/WorkView/WorkView.vue';
+import BlogView from '../views/BlogView/BlogView.vue'
 import store from '../store/index.js';
 const router = createRouter({
   history: createWebHistory(),
@@ -26,9 +27,6 @@ const router = createRouter({
       path: '/contact',
       name: 'Contact',
       component: ContactView,
-      beforeRouteLeave(to, from, next) {
-        console.log('tasd');
-      },
     },
     {
       path: '/work',
@@ -36,11 +34,16 @@ const router = createRouter({
       component: WorkView,
     },
     {
+      path: '/blog',
+      name: 'Blog',
+      component: BlogView,
+    },
+    {
       path: '/:notFound(.*)',
       redirect: '/',
     },
   ],
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior(_, _2, savedPosition) {
     if (savedPosition) {
       return savedPosition;
     } else {
@@ -48,7 +51,7 @@ const router = createRouter({
     }
   },
 });
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _, next) => {
   window.onbeforeunload = null;
   if (localStorage.getItem('selectedLanguage')) {
     const currentSelectedLanguage = localStorage.getItem('selectedLanguage');

@@ -1,5 +1,5 @@
 <template>
-<div v-if="isLoaded" :class="this.isTouchScreen? 'loaded-screen-touch':'loaded-screen-click'">
+<div v-if="isLoaded" :class="this.isTouchScreen ? 'loaded-screen-touch' : 'loaded-screen-click'">
     <div class="cursor-screen">
         <custom-cursor></custom-cursor>
     </div>
@@ -19,6 +19,7 @@ import CustomCursor from './components/ui/CustomCursor/CustomCursor.vue';
 export default {
     async created() {
         this.isLoaded = false;
+        this.$store.dispatch('fetchPosts')
         this.isTouchScreen = window.matchMedia('(pointer: coarse)').matches;
         await this.$store.dispatch('integrateCalApi');
         await this.$store.dispatch('fetchProjects');
@@ -27,7 +28,6 @@ export default {
         await this.$store.dispatch('printEasterEgg');
         this.isLoaded = true;
     },
-
     data() {
         return {
             isLoaded: false,
@@ -68,14 +68,18 @@ body {
 
     .loaded-screen-touch {
         cursor: auto;
-        button,a{
+
+        button,
+        a {
             cursor: pointer;
         }
     }
 
     .loaded-screen-click {
         cursor: none;
-        button,a{
+
+        button,
+        a {
             cursor: none;
         }
     }

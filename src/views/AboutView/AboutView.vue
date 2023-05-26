@@ -13,12 +13,9 @@
 
 <script>
 export default {
-    mountced () {
-        console.log(this.globalObject.aboutTitle);
-    },
     computed: {
         globalObject() {
-            return this.$store.getters.getlanguageObject 
+            return this.$store.getters.getlanguageObject
         }
     },
 }
