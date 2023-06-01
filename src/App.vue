@@ -1,16 +1,17 @@
 <template>
-<div v-if="isLoaded" :class="this.isTouchScreen ? 'loaded-screen-touch' : 'loaded-screen-click'">
-    <div class="cursor-screen">
-        <custom-cursor></custom-cursor>
+    <div>
+        <div v-if="isLoaded" :class="loadedScreenClass">
+            <div class="cursor-screen">
+                <custom-cursor></custom-cursor>
+            </div>
+            <app-header></app-header>
+            <router-view />
+            <app-footer></app-footer>
+        </div>
+        <div v-else class="page-loading"></div>
     </div>
-
-    <app-header></app-header>
-    <router-view />
-    <app-footer></app-footer>
-</div>
-<div v-else class="page-loading"></div>
 </template>
-
+  
 <script>
 import AppHeader from '@/layouts/AppHeader/AppHeader.vue';
 import AppFooter from '@/layouts/AppFooter/AppFooter.vue';
@@ -18,30 +19,41 @@ import CustomCursor from './components/ui/CustomCursor/CustomCursor.vue';
 
 export default {
     async created() {
-        this.isLoaded = false;
-        this.$store.dispatch('fetchPosts')
         this.isTouchScreen = window.matchMedia('(pointer: coarse)').matches;
-        await this.$store.dispatch('integrateCalApi');
-        await this.$store.dispatch('fetchProjects');
-        await this.$store.dispatch('fetchLanguage');
-        await this.$store.dispatch('setVisitor');
-        await this.$store.dispatch('printEasterEgg');
-        this.isLoaded = true;
+        try {
+            await Promise.all([
+                this.$store.dispatch('fetchPosts'),
+                this.$store.dispatch('integrateCalApi'),
+                this.$store.dispatch('fetchProjects'),
+                this.$store.dispatch('fetchLanguage'),
+                this.$store.dispatch('setVisitor'),
+                this.$store.dispatch('printEasterEgg')
+            ]);
+            this.isLoaded = true;
+        } catch (err) {
+            alert(err);
+        }
+
     },
     data() {
         return {
             isLoaded: false,
-            isTouchScreen: null,
+            isTouchScreen: null
         };
+    },
+    computed: {
+        loadedScreenClass() {
+            return this.isTouchScreen ? 'loaded-screen-touch' : 'loaded-screen-click';
+        }
     },
     components: {
         AppHeader,
         AppFooter,
-        CustomCursor,
-    },
+        CustomCursor
+    }
 };
 </script>
-
+  
 <style lang="scss">
 @import 'assets/scss/global.scss';
 
@@ -97,3 +109,4 @@ body {
     }
 }
 </style>
+  
