@@ -8,7 +8,7 @@ module.exports = {
     }
   },
 
-  //Responsable config for auto importa variables into vue components
+  //Responsable config for auto import variables into vue components
   css: {
     loaderOptions: {
       scss: {
