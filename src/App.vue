@@ -20,9 +20,9 @@ import CustomCursor from './components/ui/CustomCursor/CustomCursor.vue';
 export default {
     async created() {
         this.isTouchScreen = window.matchMedia('(pointer: coarse)').matches;
+        this.$store.dispatch('fetchPosts');
         try {
             await Promise.all([
-                this.$store.dispatch('fetchPosts'),
                 this.$store.dispatch('integrateCalApi'),
                 this.$store.dispatch('fetchProjects'),
                 this.$store.dispatch('fetchLanguage'),
