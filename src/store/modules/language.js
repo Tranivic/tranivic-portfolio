@@ -25,6 +25,9 @@ export default {
         async fetchLanguage({ commit, state }) {
             try {
                 let pathForLanguage = '';
+                if (localStorage.getItem('selectedLanguage')) {
+                    state.selectedLanguage = localStorage.getItem('selectedLanguage');
+                }
                 state.selectedLanguage === 'en'
                     ? (pathForLanguage = 'en_us')
                     : (pathForLanguage = 'pt_br');

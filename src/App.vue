@@ -23,10 +23,10 @@ export default {
         this.$store.dispatch('fetchPosts');
         try {
             await Promise.all([
+                this.$store.dispatch('setVisitor'),
                 this.$store.dispatch('integrateCalApi'),
                 this.$store.dispatch('fetchProjects'),
                 this.$store.dispatch('fetchLanguage'),
-                this.$store.dispatch('setVisitor'),
                 this.$store.dispatch('printEasterEgg')
             ]);
             this.isLoaded = true;
