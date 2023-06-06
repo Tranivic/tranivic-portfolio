@@ -87,10 +87,10 @@ const store = createStore({
         console.log(err);
       }
     },
-    async postMessage({ state }, payLoad) {
+    async postMessage({ rootGetters }, payLoad) {
       try {
         const response = await fetch(
-          'https://personal-portifoil-default-rtdb.firebaseio.com/messages.json',
+          'https://persoanal-portifoil-default-rtdb.firebaseio.com/messages.json',
           {
             method: 'POST',
             body: JSON.stringify(payLoad),
@@ -99,7 +99,7 @@ const store = createStore({
         if (!response.ok) {
           throw new Error('Failed to send message, sorry. Try again later!');
         } else {
-          return state.selectedLanguage === 'en'
+          return rootGetters.getSelectedLanguage === 'en'
             ? 'Thanks for reaching out!'
             : 'Obrigado por entrar em contato!';
         }
