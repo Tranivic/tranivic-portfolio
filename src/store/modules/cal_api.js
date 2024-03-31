@@ -10,9 +10,7 @@ export default {
             return state.calApi;
         }
     },
-    mutations: {
-
-    },
+    mutations: {},
     actions: {
         async integrateCalApi() {
             this.calApi = await getCalApi();
