@@ -1,7 +1,6 @@
 <template>
     <div :data-text="toolKitText" v-if="logoPath" class="language-changer-container">
-        <img class="interact-cursor" alt="Language flag" width="30" :src="require(`@/assets/icons/${logoPath}`)"
-            @click="changeLanguage" />
+        <img class="interact-cursor" alt="Language flag" width="30" :src="require(`@/assets/icons/${logoPath}`)" @click="changeLanguage" />
     </div>
 </template>
 
@@ -9,8 +8,8 @@
 export default {
     methods: {
         async changeLanguage() {
-            await this.$store.dispatch('changeLanguage');
-            window.open(`${this.$route}`, "_self");
+            this.$store.dispatch('changeLanguage');
+            window.open(`${this.$route.path}`, "_self");
         }
     },
     computed: {
