@@ -2,7 +2,7 @@
 <header>
     <div class="header-content">
         <div class="logo">
-            <routerLink class="interact-cursor" to="/">victortrani.</routerLink>
+            <routerLink to="/">victortrani.</routerLink>
         </div>
         <status-bar></status-bar>
         <div class="menu-container">

@@ -1,13 +1,13 @@
 <template>
 <div class="backgroud-linear-gradient">
-    <a ref="button" @click.prevent="setInitialAnimation()" class="interact-cursor button">
-        <ul class="interact-cursor" v-if="(globalNavMenu)">
-            <li class="interact-cursor">{{ globalNavMenu.initialState }}</li>
-            <li class="interact-cursor">{{ globalNavMenu.middleState }}</li>
-            <li class="interact-cursor">{{ globalNavMenu.finalState }}</li>
+    <a ref="button" @click.prevent="setInitialAnimation()" class="button">
+        <ul v-if="(globalNavMenu)">
+            <li>{{ globalNavMenu.initialState }}</li>
+            <li>{{ globalNavMenu.middleState }}</li>
+            <li>{{ globalNavMenu.finalState }}</li>
         </ul>
-        <div class="interact-cursor">
-            <svg class="interact-cursor" ref="svg" viewBox="0 0 24 24"></svg>
+        <div>
+            <svg ref="svg" viewBox="0 0 24 24"></svg>
         </div>
     </a>
 </div>

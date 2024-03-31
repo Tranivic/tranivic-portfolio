@@ -1,6 +1,6 @@
 <template>
 <template v-if="typeOfCard === 'complete'">
-    <li @click="pushToBlogPost" class="interact-cursor blog-card complete">
+    <li @click="pushToBlogPost" class="blog-card complete">
         <header :style="{ backgroundImage: 'url(' + this.post.coverImage + ')' }"></header>
         <footer>
             <h1>{{ this.post.title }}.</h1>

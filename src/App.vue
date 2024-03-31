@@ -1,25 +1,19 @@
 <template>
     <div>
-        <div v-if="isLoaded" :class="loadedScreenClass">
-            <div class="cursor-screen">
-                <custom-cursor></custom-cursor>
-            </div>
+        <div class="app">
             <app-header></app-header>
             <router-view />
             <app-footer></app-footer>
         </div>
-        <div v-else class="page-loading"></div>
     </div>
 </template>
   
 <script>
 import AppHeader from '@/layouts/AppHeader/AppHeader.vue';
 import AppFooter from '@/layouts/AppFooter/AppFooter.vue';
-import CustomCursor from './components/ui/CustomCursor/CustomCursor.vue';
 
 export default {
     async created() {
-        this.isTouchScreen = window.matchMedia('(pointer: coarse)').matches;
         this.$store.dispatch('fetchPosts');
         try {
             await Promise.all([
@@ -29,27 +23,14 @@ export default {
                 this.$store.dispatch('fetchLanguage'),
                 this.$store.dispatch('printEasterEgg')
             ]);
-            this.isLoaded = true;
         } catch (err) {
             alert(err);
         }
 
     },
-    data() {
-        return {
-            isLoaded: false,
-            isTouchScreen: null
-        };
-    },
-    computed: {
-        loadedScreenClass() {
-            return this.isTouchScreen ? 'loaded-screen-touch' : 'loaded-screen-click';
-        }
-    },
     components: {
         AppHeader,
         AppFooter,
-        CustomCursor
     }
 };
 </script>
@@ -63,37 +44,11 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-
-    .cursor-screen {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background: transparent;
-        pointer-events: none;
-        z-index: 10000;
+    button, a{
+        cursor: pointer;
     }
-
     #app {
         width: 100%;
-    }
-
-    .loaded-screen-touch {
-        cursor: auto;
-
-        button,
-        a {
-            cursor: pointer;
-        }
-    }
-
-    .loaded-screen-click {
-        cursor: none;
-
-        button,
-        a {
-            cursor: none;
-        }
     }
 
     // "Hire me" modal

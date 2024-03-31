@@ -2,7 +2,7 @@
     <ul class="social-media-menu">
         <li v-for="media in socialMedias" :key="media.name">
             <a :href="media.link" target="_blank">
-                <i :class="[media.iconIsBrands ? 'fa-brands' : 'fa', media.iconName, 'interact-cursor']"></i>
+                <i :class="[media.iconIsBrands ? 'fa-brands' : 'fa', media.iconName]"></i>
             </a>
         </li>
     </ul>

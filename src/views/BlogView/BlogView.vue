@@ -2,7 +2,7 @@
     <section class="blog-page">
         <animated-title firstLine="Blog"></animated-title>
         <ul class="blog-list">
-           <blog-card :key="post.title" v-for="post in allPosts" class="interact-cursor" :post="post" typeOfCard="complete">
+           <blog-card :key="post.title" v-for="post in allPosts" :post="post" typeOfCard="complete">
         </blog-card>
         </ul>
     </section>
