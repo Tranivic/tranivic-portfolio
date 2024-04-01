@@ -11,7 +11,7 @@
             </ul>
             <main-button :isLink="true" to="/work" color="black" class="see-more-btn">{{ globalObject.selectedWorkButton }}</main-button>
         </div>
-        <div class="things-i-do container">
+        <div class="things-i-do things-i-do container">
             <div class="about">
                 <h1>{{ globalObject.thingsIDoTitle }}</h1>
                 <p>{{ globalObject.thingsIDoDescription }}</p>
@@ -55,7 +55,7 @@ export default {
         downloadCv() {
             if (!this.btnIsLoading && this.downloadCvTimes === 0) {
                 const downloadCvUrl =
-                    'https://drive.google.com/u/0/uc?id=1k72zHZ2uO-D6K2mgxNM5cVc1_jJHwqE3&export=download';
+                    'https://drive.google.com/u/0/uc?id=1oNY4GFcR2zHu1pNPRduTSAR7rDTog4YH&export=download';
                 this.btnIsLoading = true;
                 this.$store.commit('increeseDownloadTimes');
                 setTimeout(() => {
@@ -65,7 +65,7 @@ export default {
             }
             if (!this.btnIsLoading && this.downloadCvTimes > 0) {
                 const viewCvUrl =
-                    'https://drive.google.com/file/d/1k72zHZ2uO-D6K2mgxNM5cVc1_jJHwqE3/view?usp=share_link';
+                    'https://drive.google.com/file/d/1oNY4GFcR2zHu1pNPRduTSAR7rDTog4YH/view?usp=share_link';
                 this.$store.commit('increeseDownloadTimes');
                 window.open(viewCvUrl, '_blank');
             }
