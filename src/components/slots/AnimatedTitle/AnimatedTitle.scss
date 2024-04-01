@@ -11,8 +11,8 @@
     transition: all 0.3s ease;
     font-size: $font-size-title * 3;
     font-family: $font-family-primary;
-    font-weight: 600;
-    color: $black-main;
+    font-weight: $font-weight-title;
+    color: black;
   }
 }
 
