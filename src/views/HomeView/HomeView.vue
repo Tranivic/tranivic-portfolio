@@ -18,7 +18,7 @@
             </div>
             <div class="skills container">
                 <h1>{{ globalObject.skillsTitle }}</h1>
-                <p> HTML / CSS / SASS / JS / Vue / Nuxt.js / Tailwind CSS / Bootstrap / TypeScript / Figma / Adobe XD </p>
+                <p> {{  globalObject.skillsDescription }}</p>
                 <div class="btn-container">
                     <download-button @click="downloadCv()" class="">Download CV</download-button>
                 </div>

@@ -9,8 +9,8 @@
         "workButton": "Projects"
     },
     "downloadMenu": {
-        "initialState": "Download CV",
-        "middleState": "Downloading",
+        "initialState": "Download",
+        "middleState": "Downloading...",
         "finalState": "Open 📁"
     },
     "toolkitLanguageSelect": "Tradução Português",
@@ -18,11 +18,12 @@
     "titleSecondLine": "I project, code and grow internet software.",
     "description": "I’m a Software Engineer focused on frontend developing who enjoys turning problems and opportunities into simple interfaces through code.",
     "hireMeButton": "Hire me",
-    "selectedWork": "Selected Projects",
+    "selectedWork": "Personal Projects",
     "selectedWorkButton": "See More",
     "thingsIDoTitle": "Things i do",
     "thingsIDoDescription": "Coding, strategy, management, and development are my specialties, and I've been working on it for almost 2 years honing my skills. In all my projects, I realize that efficient workflows, good communication, and a dose of self-discipline are fundamental.",
-    "skillsTitle": "Skills",
+    "skillsTitle": "Resume",
+    "skillsDescription": "For more information about myself, just download my resume.",
     "blogTitle": "Featured Blog",
     "readMoreButton": "Read more",
     "readingTime": "min reading",
