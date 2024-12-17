@@ -41,7 +41,7 @@
                         <h1>{{ globalObject.my_expertise.grid.title }}</h1>
                         <p>{{ globalObject.my_expertise.grid.text }}</p>
                     </div>
-                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">Free discovery call <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">{{ globalObject.my_expertise.call }}<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="card small">
                     <div class="card-info">
@@ -49,7 +49,7 @@
                         <h1>{{ globalObject.my_expertise.rocket.title }}</h1>
                         <p>{{ globalObject.my_expertise.rocket.text }}</p>
                     </div>
-                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">Free discovery call <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">{{ globalObject.my_expertise.call }}<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
             <div class="row">
@@ -59,7 +59,7 @@
                         <h1>{{ globalObject.my_expertise.skills.title }}</h1>
                         <p>{{ globalObject.my_expertise.skills.text }}</p>
                     </div>
-                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">Free discovery call <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">{{ globalObject.my_expertise.call }}<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <div class="card big">
                     <div class="card-info">
@@ -70,7 +70,7 @@
                     <div class="card-effect">
                         <DottedGlobe/>
                     </div>
-                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">Free discovery call <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">{{ globalObject.my_expertise.call }}<i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
