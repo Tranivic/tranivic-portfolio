@@ -1,6 +1,7 @@
 <template>
     <section class="home-page">
-        <animated-title v-if="globalObject.titleFirstLine" :firstLine="globalObject.titleFirstLine" :secondLine="globalObject.titleSecondLine"></animated-title>
+        <div class="home-page wrapper">
+            <animated-title v-if="globalObject.titleFirstLine" :firstLine="globalObject.titleFirstLine" :secondLine="globalObject.titleSecondLine"></animated-title>
         <p class="sub-title">{{ globalObject.description }}</p>
         <social-media></social-media>
         <main-button ref="calButton" data-cal-link="tranivic/15min" class="hire-btn" color="black">{{ globalObject.hireMeButton }}</main-button>
@@ -18,9 +19,58 @@
             </div>
             <div class="skills container">
                 <h1>{{ globalObject.skillsTitle }}</h1>
-                <p> {{  globalObject.skillsDescription }}</p>
+                <p> {{globalObject.skillsDescription}} </p>
                 <div class="btn-container">
-                    <download-button @click="downloadCv()" class="">Download CV</download-button>
+                    <download-button @click="downloadCv()"></download-button>
+                </div>
+            </div>
+        </div>
+        <div class="my-expertise container" v-if="globalObject.my_expertise">
+            <div class="row">
+                <div class="card big">
+                    <div class="wrapper" style="transform: rotateX(45deg); height: 100%; width: 100%; position: absolute; perspective: 600px; z-index: -1;">
+                        <div class="wrapper-2" style="transform: rotateX(45deg); height: 100%; width: 100%; position: absolute;">
+                            <div class="bg-grid">
+                                <div class="gradient-effect" style="width: 100%; background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.8) 45%); position: absolute; z-index: 12121212; height: 100%; opacity: .9">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <i class="card-icon fa-solid fa-brain"></i>
+                        <h1>{{ globalObject.my_expertise.grid.title }}</h1>
+                        <p>{{ globalObject.my_expertise.grid.text }}</p>
+                    </div>
+                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">Free discovery call <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="card small">
+                    <div class="card-info">
+                        <i class="card-icon fa-solid fa-rocket"></i>
+                        <h1>{{ globalObject.my_expertise.rocket.title }}</h1>
+                        <p>{{ globalObject.my_expertise.rocket.text }}</p>
+                    </div>
+                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">Free discovery call <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="card small">
+                    <div class="card-info">
+                        <i class="card-icon fa-solid fa-computer"></i>
+                        <h1>{{ globalObject.my_expertise.skills.title }}</h1>
+                        <p>{{ globalObject.my_expertise.skills.text }}</p>
+                    </div>
+                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">Free discovery call <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <div class="card big">
+                    <div class="card-info">
+                        <i class="card-icon fa fa-tasks" aria-hidden="true"></i>
+                        <h1>{{ globalObject.my_expertise.job.title }}</h1>
+                        <p>{{ globalObject.my_expertise.job.text }}</p>
+                    </div>
+                    <div class="card-effect">
+                        <DottedGlobe/>
+                    </div>
+                    <a href="https://cal.com/tranivic/15min?date=2024-04-09&month=2024-04" target="_blank" class="call-btn">Free discovery call <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -37,6 +87,7 @@
         </div>
         <main-button :isLink="true" to="/blog" color="black" class="see-more-btn">{{ globalObject.selectedWorkButton }}</main-button>
         <lets-talk></lets-talk>
+        </div>
     </section>
 </template>
 
@@ -45,11 +96,15 @@
 </style>
 
 <script>
+import DottedGlobe from '@/components/ui/DottedGlobe/DottedGlobe.vue';
 export default {
     data() {
         return {
             btnIsLoading: false,
         };
+    },
+    components: {
+        DottedGlobe
     },
     methods: {
         downloadCv() {

@@ -6,6 +6,11 @@
     text-align: center;
     padding: $padding-base * 1.5 0;
     font-family: $font-family-primary;
+    width: 100%;
+
+    &.wrapper {
+        max-width: 1920px;
+    }
 
     h1 {
         font-family: $font-family-primary;
@@ -39,7 +44,7 @@
     }
 
     .container {
-        width: 80%;
+        width: 70%;
         padding: $padding-base * 1.5 0;
 
         h1 {
@@ -53,9 +58,9 @@
         .work-list {
             display: flex;
             align-items: center;
-            justify-content: space-evenly;
+            justify-content: space-between;
             margin-bottom: 3rem;
-            padding: $padding-base;
+            padding: $padding-base 0;
 
             li {
                 margin: 1rem;
@@ -67,7 +72,7 @@
         display: grid;
         align-items: center;
         justify-content: center;
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 1.6fr .6fr;
 
         p {
             padding: $padding-base 0;
@@ -104,6 +109,169 @@
         }
     }
 
+    .my-expertise {
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 100%;
+
+        .row {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .card {
+                height: 100%;
+                display: flex;
+                align-items: end;
+                border-radius: $border-radius-base;
+                margin: 1.5rem 1.5rem 1.5rem 0;
+                height: 290px;
+                box-shadow: 0 0 0 1px rgba(0, 0, 0, .03), 0 2px 4px rgba(0, 0, 0, .05), 0 12px 24px rgba(0, 0, 0, .05);
+                overflow: hidden;
+                position: relative;
+                transition: all 0.3s ease-in-out;
+
+                .call-btn {
+                    position: absolute;
+                    width: 100%;
+                    border-radius: $border-radius-base;
+                    border: none;
+                    background-color: black;
+                    color: white;
+                    padding: $padding-base * 0.3;
+                    font-family: $font-family-primary;
+                    font-size: $font-size-base;
+                    font-weight: 200;
+                    cursor: pointer;
+                    background-color: $black-main;
+                    color: $white-main;
+                    margin-bottom: -50px;
+                    transition: all 0.3s ease-in-out;
+                    text-align: start;
+                    padding-left: $padding-base;
+                    text-decoration: none;
+
+                    i {
+                        margin-left: 10px;
+                        transition: all 0.2s ease-in-out;
+                        font-size: 12px;
+                    }
+
+                    &:before {
+                        @include gradient-shadow(0.4);
+                    }
+
+                    &:hover {
+                        i {
+                            transform: translateX(10px);
+                        }
+                    }
+                }
+
+                &:hover {
+                    transform: translateY(-8px);
+
+                    .call-btn {
+                        margin-bottom: 0px;
+                    }
+
+                    .card-info {
+                        background-color: rgba(0, 0, 0, 0.042);
+
+                    }
+
+                    .card-icon {
+                        font-size: 28px;
+                    }
+
+                    p,
+                    .card-icon,
+                    h1 {
+                        transform: translateY(-20px);
+                    }
+                }
+
+                .card-info {
+
+                    z-index: -1;
+                    height: 100%;
+                    backdrop-filter: blur(.5px);
+                    display: flex;
+                    flex-direction: column;
+                    text-align: start;
+                    width: 100%;
+                    padding: $padding-base * 1.2;
+                    justify-content: end;
+
+                    h1,
+                    p,
+                    .card-icon {
+                        transition: all 0.3s ease-in-out;
+                    }
+
+                    h1 {
+                        padding: 2rem 0;
+                        font-size: $font-size-title * 1.2;
+                    }
+
+                    p {
+                        font-size: $font-size-base * 1.2;
+                    }
+                }
+
+                &.big {
+                    width: 60%;
+                    position: relative;
+
+                    .bg-grid {
+                        width: 200vw !important;
+                        height: 300vh !important;
+                        margin-left: -50%;
+                        position: absolute;
+                        top: 0;
+                        background: linear-gradient(90deg, rgba(0, 0, 0, .3) 1px, transparent 0), linear-gradient(180deg, rgba(0, 0, 0, .3) 1px, transparent 0);
+                        background-size: 80px 120px;
+                        background-repeat: repeat;
+                        width: 100%;
+                        height: 100%;
+                        transform: rotateX(45deg);
+                        margin-bottom: -800px;
+                        animation: grid 4.6s linear infinite;
+
+                        @keyframes grid {
+                            0% {
+                                transform: translateY(-20%);
+                            }
+
+                            100% {
+                                transform: translateY(-10%);
+                            }
+                        }
+                    }
+                }
+
+
+                &.small {
+                    width: 40%;
+                }
+
+                .card-effect {
+                    z-index: -222;
+                    position: absolute;
+                    top: -65px;
+                    right: -230px;
+                }
+            }
+        }
+
+        i {
+            font-size: 35px;
+        }
+    }
+
     .personal-blog {
         .blog-content {
             display: flex;
@@ -113,7 +281,7 @@
             .last-posts {
                 display: flex;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
                 width: 100%;
                 height: 100%;
             }
@@ -144,6 +312,14 @@
 @media (max-width: $small-screen) {
     p {
         font-size: $font-size-base * 1.4 !important;
+    }
+    .my-expertise{
+        .row{
+            flex-direction: column;
+            .card{
+                min-width: 100%;
+            }
+        }
     }
 
     .home-page {
@@ -184,6 +360,7 @@
                 }
             }
         }
+
     }
 }
 

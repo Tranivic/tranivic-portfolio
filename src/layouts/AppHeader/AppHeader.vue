@@ -9,7 +9,6 @@
             <language-button></language-button>
             <nav-menu></nav-menu>
         </div>
-
     </div>
 </header>
 </template>

@@ -38,5 +38,23 @@
     "contactEmailPlaceholder": "E-mail",
     "contactMessagePlaceholder": "What's on your mind?",
     "myWorksTitle": "My Works",
-    "contactButton": "Send"
+    "contactButton": "Send",
+    "my_expertise": {
+        "grid": {
+            "title": "My Knowlege Grid",
+            "text": "Experienced Full-Stack Developer proficient in building modern and scalable web solutions."
+        },
+        "rocket": {
+            "title": "Taking Your Project to New Heights",
+            "text": "Delivering clean, fast, and reliable code while following best practices. Focused on achieving results with agility and accountability."
+        },
+        "skills": {
+            "title": "Technical Skillset",
+            "text": "Proficient in JavaScript, PHP, and Node.js. Skilled in API development, front-end, database management, and performance optimization."
+        },
+        "job": {
+            "title": "All Around the World",
+            "text": "Committed to delivering value across borders. Ready to collaborate remotely or on-site to bring visions to life."
+        }
+    }
 }

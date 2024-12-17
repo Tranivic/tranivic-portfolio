@@ -4,7 +4,7 @@
     flex-direction: column;
     font-family: $font-family-primary;
     color: $black-main;
-    width: 65%;
+    width: 90%;
     height: 100%;
     margin: $margin-base * 0.5;
     transition: all 0.3s ease;
@@ -100,7 +100,8 @@
 @media (max-width: $small-screen) {
     .blog-card {
         width: 100%;
-
+        margin-left: 0;
+        margin-right: 0;
         footer {
             h1 {
                 margin: 0;
